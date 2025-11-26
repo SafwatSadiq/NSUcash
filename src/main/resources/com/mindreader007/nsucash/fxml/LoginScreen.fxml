@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mindreader007.nsucash.controller.LoginScreen">
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="258.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="usernameInputField" layoutX="55.0" layoutY="126.0" promptText="Username" />
+            <PasswordField fx:id="passwordInputField" layoutX="55.0" layoutY="162.0" promptText="Password" />
+            <Button fx:id="loginButton" graphicTextGap="0.0" layoutX="105.0" layoutY="280.0" mnemonicParsing="false" onAction="#userLogin" onMouseExited="#loginButtonColorChangeOnExit" onMouseMoved="#loginButtonColorChangeOnMove" prefHeight="23.0" prefWidth="49.0" style="-fx-background-color: #061742; -fx-background-radius: 5;" text="▶" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Label layoutX="84.0" layoutY="56.0" text="LOGIN" textFill="#061742">
+               <font>
+                  <Font name="Agave Nerd Font Propo Bold" size="36.0" />
+               </font>
+            </Label>
+            <CheckBox layoutX="55.0" layoutY="196.0" mnemonicParsing="false" text="Stay signed in" />
+            <Label fx:id="loginStatusMessage" alignment="CENTER" layoutX="55.0" layoutY="100.0" prefHeight="17.0" prefWidth="149.0" textAlignment="CENTER" textFill="#061742" />
+         </children></AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="400.0" prefWidth="624.0" style="-fx-background-color: #061742;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="90.0" layoutY="145.0" text="NSUCash" textFill="WHITE">
+               <font>
+                  <Font name="3270 Nerd Font Mono" size="96.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </right>
+</BorderPane>
