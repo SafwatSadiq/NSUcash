@@ -22,7 +22,7 @@
                         <FontAwesomeIconView fill="#d1dbe4" glyphName="BOOK" selectionFill="#d1dbe4" />
                      </graphic>
                   </Button>
-                  <Button layoutX="348.0" layoutY="421.0" mnemonicParsing="false" onMouseExited="#onHoverExitButton" onMouseMoved="#onHoverButton" prefHeight="96.0" prefWidth="231.0" style="-fx-background-radius: 30; -fx-background-color: #061742;" text="Canteen" textFill="#d1dbe4">
+                  <Button layoutX="348.0" layoutY="421.0" mnemonicParsing="false" onAction="#canteenButtonClicked" onMouseExited="#onHoverExitButton" onMouseMoved="#onHoverButton" prefHeight="96.0" prefWidth="231.0" style="-fx-background-radius: 30; -fx-background-color: #061742;" text="Canteen" textFill="#d1dbe4">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="24.0" />
                      </font>
@@ -30,7 +30,7 @@
                         <FontAwesomeIconView fill="#d1dbe4" glyphName="BEER" />
                      </graphic>
                   </Button>
-                  <Button layoutX="649.0" layoutY="421.0" mnemonicParsing="false" onMouseExited="#onHoverExitButton" onMouseMoved="#onHoverButton" prefHeight="96.0" prefWidth="231.0" style="-fx-background-radius: 30; -fx-background-color: #061742;" text="Transfer" textFill="#d1dbe4">
+                  <Button layoutX="649.0" layoutY="421.0" mnemonicParsing="false" onAction="#transferButtonClicked" onMouseExited="#onHoverExitButton" onMouseMoved="#onHoverButton" prefHeight="96.0" prefWidth="231.0" style="-fx-background-radius: 30; -fx-background-color: #061742;" text="Transfer" textFill="#d1dbe4">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="24.0" />
                      </font>
@@ -38,7 +38,7 @@
                         <FontAwesomeIconView fill="#d1dbe4" glyphName="EXCHANGE" />
                      </graphic>
                   </Button>
-                  <Button layoutX="47.0" layoutY="556.0" mnemonicParsing="false" onMouseExited="#onHoverExitButton" onMouseMoved="#onHoverButton" prefHeight="96.0" prefWidth="231.0" style="-fx-background-radius: 30; -fx-background-color: #061742;" text="Advising" textFill="#d1dbe4">
+                  <Button layoutX="47.0" layoutY="556.0" mnemonicParsing="false" onAction="#advisingButtonClicked" onMouseExited="#onHoverExitButton" onMouseMoved="#onHoverButton" prefHeight="96.0" prefWidth="231.0" style="-fx-background-radius: 30; -fx-background-color: #061742;" text="Advising" textFill="#d1dbe4">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="24.0" />
                      </font>
@@ -46,7 +46,7 @@
                         <FontAwesomeIconView fill="#d1dbe4" glyphName="TH_LIST" />
                      </graphic>
                   </Button>
-                  <Button layoutX="348.0" layoutY="556.0" mnemonicParsing="false" onMouseExited="#onHoverExitButton" onMouseMoved="#onHoverButton" prefHeight="96.0" prefWidth="231.0" style="-fx-background-radius: 30; -fx-background-color: #061742;" text="Bus" textFill="#d1dbe4">
+                  <Button layoutX="348.0" layoutY="556.0" mnemonicParsing="false" onAction="#busButtonClicked" onMouseExited="#onHoverExitButton" onMouseMoved="#onHoverButton" prefHeight="96.0" prefWidth="231.0" style="-fx-background-radius: 30; -fx-background-color: #061742;" text="Bus" textFill="#d1dbe4">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="24.0" />
                      </font>
@@ -54,7 +54,7 @@
                         <FontAwesomeIconView fill="#d1dbe4" glyphName="BUS" />
                      </graphic>
                   </Button>
-                  <Button layoutX="649.0" layoutY="556.0" mnemonicParsing="false" onMouseExited="#onHoverExitButton" onMouseMoved="#onHoverButton" prefHeight="96.0" prefWidth="231.0" style="-fx-background-radius: 30; -fx-background-color: #061742;" text="Calculator" textFill="#d1dbe4">
+                  <Button layoutX="649.0" layoutY="556.0" mnemonicParsing="false" onAction="#calculatorButtonClicked" onMouseExited="#onHoverExitButton" onMouseMoved="#onHoverButton" prefHeight="96.0" prefWidth="231.0" style="-fx-background-radius: 30; -fx-background-color: #061742;" text="Calculator" textFill="#d1dbe4">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="24.0" />
                      </font>

@@ -40,7 +40,27 @@ public class MenuScreen {
     }
 
     public void bookshopButtonClicked(){
-        loadPage("/com/mindreader007/nsucash/fxml/TopUpScreen.fxml");
+        loadPage("/com/mindreader007/nsucash/fxml/BookShopScreen.fxml");
+    }
+
+    public void canteenButtonClicked(){
+        loadPage("/com/mindreader007/nsucash/fxml/canteenScreen.fxml");
+    }
+
+    public void transferButtonClicked(){
+        loadPage("/com/mindreader007/nsucash/fxml/transferScreen.fxml");
+    }
+
+    public void advisingButtonClicked(){
+        loadPage("/com/mindreader007/nsucash/fxml/advisingScreen.fxml");
+    }
+
+    public void busButtonClicked(){
+        loadPage("/com/mindreader007/nsucash/fxml/busScreen.fxml");
+    }
+
+    public void calculatorButtonClicked(){
+        loadPage("/com/mindreader007/nsucash/fxml/calculatorScreen.fxml");
     }
 
 
