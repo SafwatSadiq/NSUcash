@@ -5,6 +5,8 @@ module com.mindreader007.nsucash {
     requires de.jensd.fx.glyphs.commons;
 
     requires com.dlsc.formsfx;
+    requires java.desktop;
+    requires javafx.graphics;
 
     opens com.mindreader007.nsucash to javafx.fxml;
     opens com.mindreader007.nsucash.controller to javafx.fxml;

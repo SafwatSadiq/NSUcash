@@ -16,7 +16,7 @@ import java.util.Objects;
 
 public class MainScreen {
     public MainScreen(){
-        homeButtonPressed = true;
+        homeButtonPressed = false;
         topUpButtonPressed = false;
         transactionsButtonPressed = false;
         summaryButtonPressed = false;

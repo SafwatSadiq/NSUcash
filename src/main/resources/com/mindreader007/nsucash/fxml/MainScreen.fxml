@@ -11,12 +11,12 @@
    <left>
       <AnchorPane prefHeight="720.0" prefWidth="354.0" style="-fx-background-color: #061742; -fx-background-radius: 0 15 15 0;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="homeButton" layoutX="40.0" layoutY="234.0" mnemonicParsing="false" onAction="#homeButtonClick" onMouseExited="#onHoverExitButton" onMouseMoved="#onHoverButton" prefHeight="66.0" prefWidth="275.0" style="-fx-background-color: #061742; -fx-background-radius: 30; -fx-border-width: 5; -fx-border-color: #d1dbe4; -fx-border-radius: 30;" text="Home" textFill="#d1dbe4">
+            <Button fx:id="homeButton" layoutX="40.0" layoutY="234.0" mnemonicParsing="false" onAction="#homeButtonClick" onMouseExited="#onHoverExitButton" onMouseMoved="#onHoverButton" prefHeight="66.0" prefWidth="275.0" style="-fx-background-color: #d1dbe4; -fx-background-radius: 30;" text="Home" textFill="#061742">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
                <graphic>
-                  <FontAwesomeIconView fill="#d1dbe4" glyphName="HOME" size="40" text="" />
+                  <FontAwesomeIconView fill="#061742" glyphName="HOME" selectionFill="#061742" size="40" text="" />
                </graphic>
             </Button>
             <Button fx:id="summaryButton" alignment="CENTER" layoutX="40.0" layoutY="408.0" mnemonicParsing="false" onAction="#summaryButtonClick" onMouseExited="#onHoverExitButton" onMouseMoved="#onHoverButton" prefHeight="66.0" prefWidth="275.0" style="-fx-background-color: #d1dbe4; -fx-background-radius: 30;" text="Summary" textFill="#061742">
@@ -76,17 +76,17 @@
       <AnchorPane fx:id="contentArea" prefHeight="720.0" prefWidth="926.0" style="-fx-background-color: #d1dbe4;" BorderPane.alignment="CENTER">
          <children>
             <BorderPane prefHeight="720.0" prefWidth="926.0">
-               <top>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="926.0" style="-fx-background-color: #061742; -fx-background-radius: 30;" BorderPane.alignment="CENTER">
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Label layoutX="327.0" layoutY="7.0" text="Welcome To NSUCash" textFill="#d1dbe4">
+                        <Label layoutX="153.0" layoutY="318.0" text="WELCOME, USER">
                            <font>
-                              <Font name="3270 Nerd Font Mono" size="28.0" />
+                              <Font name="Arial Rounded MT Bold" size="72.0" />
                            </font>
                         </Label>
                      </children>
                   </AnchorPane>
-               </top>
+               </center>
             </BorderPane>
          </children>
       </AnchorPane>
