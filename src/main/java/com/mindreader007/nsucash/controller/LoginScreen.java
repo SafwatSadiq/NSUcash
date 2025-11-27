@@ -2,6 +2,7 @@ package com.mindreader007.nsucash.controller;
 
 import com.mindreader007.nsucash.Main;
 import com.mindreader007.nsucash.services.UserDAO;
+import com.mindreader007.nsucash.services.UserSession;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -37,6 +38,7 @@ public class LoginScreen {
         if(UserDAO.validateLogin(username, password)){
             Main m = new Main();
             m.changeScene("fxml/MainScreen.fxml", 1280, 720);
+            UserSession.startSession(username);
         }
         else loginStatusMessage.setText("Wrong Credential");
     }

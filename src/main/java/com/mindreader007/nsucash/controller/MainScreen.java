@@ -1,6 +1,7 @@
 package com.mindreader007.nsucash.controller;
 
 import com.mindreader007.nsucash.Main;
+import com.mindreader007.nsucash.services.UserSession;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
