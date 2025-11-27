@@ -44,23 +44,23 @@ public class MenuScreen {
     }
 
     public void canteenButtonClicked(){
-        loadPage("/com/mindreader007/nsucash/fxml/canteenScreen.fxml");
+        loadPage("/com/mindreader007/nsucash/fxml/CanteenScreen.fxml");
     }
 
     public void transferButtonClicked(){
-        loadPage("/com/mindreader007/nsucash/fxml/transferScreen.fxml");
+        loadPage("/com/mindreader007/nsucash/fxml/TransferScreen.fxml");
     }
 
     public void advisingButtonClicked(){
-        loadPage("/com/mindreader007/nsucash/fxml/advisingScreen.fxml");
+        loadPage("/com/mindreader007/nsucash/fxml/AdvisingScreen.fxml");
     }
 
     public void busButtonClicked(){
-        loadPage("/com/mindreader007/nsucash/fxml/busScreen.fxml");
+        loadPage("/com/mindreader007/nsucash/fxml/BusScreen.fxml");
     }
 
     public void calculatorButtonClicked(){
-        loadPage("/com/mindreader007/nsucash/fxml/calculatorScreen.fxml");
+        loadPage("/com/mindreader007/nsucash/fxml/CalculatorScreen.fxml");
     }
 
 
