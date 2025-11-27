@@ -1,6 +1,7 @@
 package com.mindreader007.nsucash.controller;
 
 import com.mindreader007.nsucash.Main;
+import com.mindreader007.nsucash.services.UserDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -29,14 +30,15 @@ public class LoginScreen {
     }
 
     public void checkLogin() throws IOException{
-//        if(passwordInputField.getText().equals("1234") && usernameInputField.getText().equals("User1")){
-//            Main m = new Main();
-//            m.changeScene("MainScreen.fxml", 1280, 720);
-//        }
-//        else loginStatusMessage.setText("Wrong Credential");
 
-        Main m = new Main();
-        m.changeScene("fxml/MainScreen.fxml", 1280, 720);
+        String username = usernameInputField.getText();
+        String password = passwordInputField.getText();
+
+        if(UserDAO.validateLogin(username, password)){
+            Main m = new Main();
+            m.changeScene("fxml/MainScreen.fxml", 1280, 720);
+        }
+        else loginStatusMessage.setText("Wrong Credential");
     }
 
     public void loginButtonColorChangeOnMove(){

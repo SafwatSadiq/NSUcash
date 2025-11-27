@@ -8,6 +8,7 @@ package com.mindreader007.nsucash;
 // COLOR 5 - #194a7a
 // COLOR 6 - #061742
 
+import com.mindreader007.nsucash.database.SetupDatabase;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -48,6 +49,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args){
+        SetupDatabase.init();
         launch();
     }
 }
