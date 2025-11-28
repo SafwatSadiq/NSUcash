@@ -5,7 +5,9 @@ import com.mindreader007.nsucash.services.UserSession;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -13,9 +15,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class MainScreen {
+public class MainScreen implements Initializable {
     public MainScreen(){
         homeButtonPressed = false;
         topUpButtonPressed = false;
@@ -42,6 +46,8 @@ public class MainScreen {
     private AnchorPane contentArea;
     @FXML
     private BorderPane mainPanel;
+    @FXML
+    private Label welcomeText;
 
     private boolean homeButtonPressed;
     private boolean topUpButtonPressed;
@@ -53,10 +59,15 @@ public class MainScreen {
     private String onHoverStyle = "-fx-background-color: #a3b7ca; -fx-background-radius: 30; -fx-text-fill: #061742;";
     private String defaultStyle = "-fx-background-radius: 30; -fx-background-color: #d1dbe4; -fx-text-fill: #061742;";
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle){
+        welcomeText.setText("Welcome, " + UserSession.getUsername());
+    }
+
     public void userLogout() throws IOException {
         Main m = new Main();
         m.changeScene("fxml/LoginScreen.fxml", 800, 400);
-        UserSession.endSession();
+//        UserSession.endSession();
     }
 
     public void onHoverButton(MouseEvent event){

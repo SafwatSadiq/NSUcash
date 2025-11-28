@@ -36,9 +36,9 @@ public class LoginScreen {
         String password = passwordInputField.getText();
 
         if(UserDAO.validateLogin(username, password)){
+            UserSession.startSession(username);
             Main m = new Main();
             m.changeScene("fxml/MainScreen.fxml", 1280, 720);
-            UserSession.startSession(username);
         }
         else loginStatusMessage.setText("Wrong Credential");
     }
