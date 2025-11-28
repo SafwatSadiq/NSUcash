@@ -56,6 +56,7 @@ public class MainScreen {
     public void userLogout() throws IOException {
         Main m = new Main();
         m.changeScene("fxml/LoginScreen.fxml", 800, 400);
+        UserSession.endSession();
     }
 
     public void onHoverButton(MouseEvent event){
