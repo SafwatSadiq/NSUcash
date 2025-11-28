@@ -14,8 +14,9 @@ public class SetupDatabase {
                 "transaction_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "username TEXT NOT NULL," +
                 "date_time TEXT NOT NULL," +
-                "type TEXT NOT NULL CHECK(type IN ('food', 'bus', 'advising', 'transfer', 'book'))," +
-                "value REAL NOT NULL" +
+                "type TEXT NOT NULL CHECK(type IN ('canteen', 'bus', 'advising', 'transfer', 'bookshop'))," +
+                "value REAL NOT NULL," +
+                "FOREIGN KEY(username) REFERENCES accounts(username)" +
                 ");";
 
         String sqlaccounts = "CREATE TABLE IF NOT EXISTS accounts (" +
