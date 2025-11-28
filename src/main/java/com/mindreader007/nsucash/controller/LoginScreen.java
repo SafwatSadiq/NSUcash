@@ -52,4 +52,8 @@ public class LoginScreen {
         loginButton.setStyle("-fx-background-color: #061742; -fx-background-radius: 5;");
     }
 
+    public void moveToPassword(){
+        passwordInputField.requestFocus();
+    }
+
 }

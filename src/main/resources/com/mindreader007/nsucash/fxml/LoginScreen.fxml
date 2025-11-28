@@ -13,8 +13,8 @@
    <left>
       <AnchorPane prefHeight="400.0" prefWidth="258.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="usernameInputField" layoutX="55.0" layoutY="126.0" promptText="Username" />
-            <PasswordField fx:id="passwordInputField" layoutX="55.0" layoutY="162.0" promptText="Password" />
+            <TextField fx:id="usernameInputField" layoutX="55.0" layoutY="126.0" onAction="#moveToPassword" promptText="Username" />
+            <PasswordField fx:id="passwordInputField" layoutX="55.0" layoutY="162.0" onAction="#userLogin" promptText="Password" />
             <Button fx:id="loginButton" graphicTextGap="0.0" layoutX="105.0" layoutY="280.0" mnemonicParsing="false" onAction="#userLogin" onMouseExited="#loginButtonColorChangeOnExit" onMouseMoved="#loginButtonColorChangeOnMove" prefHeight="23.0" prefWidth="49.0" style="-fx-background-color: #061742; -fx-background-radius: 5;" text="▶" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="20.0" />
