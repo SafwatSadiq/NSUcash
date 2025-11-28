@@ -1,6 +1,7 @@
 package com.mindreader007.nsucash.controller;
 
 import com.mindreader007.nsucash.Main;
+import com.mindreader007.nsucash.services.AccountsDAO;
 import com.mindreader007.nsucash.services.UserDAO;
 import com.mindreader007.nsucash.services.UserSession;
 import javafx.event.ActionEvent;
@@ -36,7 +37,7 @@ public class LoginScreen {
         String password = passwordInputField.getText();
 
         if(UserDAO.validateLogin(username, password)){
-            UserSession.startSession(UserDAO.getUser(username));
+            UserSession.startSession(AccountsDAO.getUser(username));
             Main m = new Main();
             m.changeScene("fxml/MainScreen.fxml", 1280, 720);
         }
