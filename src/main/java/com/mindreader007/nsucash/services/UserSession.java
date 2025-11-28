@@ -1,17 +1,19 @@
 package com.mindreader007.nsucash.services;
 
-public class UserSession {
-    private static String username;
+import com.mindreader007.nsucash.model.User;
 
-    public static void startSession(String user) {
-        username = user;
+public class UserSession {
+    private static User loggedInUser;
+
+    public static void startSession(User user) {
+        loggedInUser = user;
     }
 
-    public static String getUsername() {
-        return username;
+    public static User getUser() {
+        return loggedInUser;
     }
 
     public static void endSession() {
-        username = null;
+        loggedInUser = null;
     }
 }

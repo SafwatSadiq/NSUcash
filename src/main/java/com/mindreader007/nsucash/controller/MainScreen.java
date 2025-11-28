@@ -95,7 +95,7 @@ public class MainScreen implements Initializable {
     }
 
     public void showBalance(){
-        viewBalance.setText("Tk 1052.25");
+        viewBalance.setText("Tk " + UserSession.getUser().getBalance());
         viewBalance.setFont(new Font("Arial Black", 16));
         viewBalance.setStyle("-fx-background-radius: 30; -fx-background-color: #d1dbe4; -fx-text-fill: #061742;");
     }

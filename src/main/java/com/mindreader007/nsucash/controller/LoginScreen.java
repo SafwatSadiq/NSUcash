@@ -36,7 +36,7 @@ public class LoginScreen {
         String password = passwordInputField.getText();
 
         if(UserDAO.validateLogin(username, password)){
-            UserSession.startSession(username);
+            UserSession.startSession(UserDAO.getUser(username));
             Main m = new Main();
             m.changeScene("fxml/MainScreen.fxml", 1280, 720);
         }
