@@ -21,7 +21,7 @@ import java.util.ResourceBundle;
 
 public class MainScreen implements Initializable {
     public MainScreen(){
-        homeButtonPressed = false;
+        homeButtonPressed = true;
         topUpButtonPressed = false;
         transactionsButtonPressed = false;
         summaryButtonPressed = false;
@@ -61,7 +61,7 @@ public class MainScreen implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
-        welcomeText.setText("Welcome, " + UserSession.getUsername());
+        homeButtonClick();
     }
 
     public void userLogout() throws IOException {
