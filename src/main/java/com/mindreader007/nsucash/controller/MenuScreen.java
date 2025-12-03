@@ -88,6 +88,6 @@ public class MenuScreen implements Initializable {
         dashboardDepartmentLabel.setText(UserSession.getUser().getDepartment());
         dashboardUserIDLabel.setText(String.valueOf(UserSession.getUser().getUserid()));
         dashboardPhoneNumberLabel.setText(UserSession.getUser().getPhoneNumber());
-        dashboardBalanceLabel.setText("Tk " + String.valueOf(UserSession.getUser().getBalance()));
+        dashboardBalanceLabel.setText("Tk " + UserSession.getUser().getBalance());
     }
 }
