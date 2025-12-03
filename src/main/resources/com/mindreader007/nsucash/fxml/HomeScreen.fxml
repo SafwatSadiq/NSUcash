@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="contentArea" prefHeight="720.0" prefWidth="926.0" style="-fx-background-color: #d1dbe4;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mindreader007.nsucash.controller.MenuScreen">
+<AnchorPane fx:id="contentArea" prefHeight="720.0" prefWidth="926.0" style="-fx-background-color: #d1dbe4;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mindreader007.nsucash.controller.MenuScreen">
     <children>
       <BorderPane prefHeight="720.0" prefWidth="926.0">
          <center>
@@ -67,14 +67,38 @@
                   <FontAwesomeIconView fill="#061742" glyphName="USER" layoutX="98.0" layoutY="299.0" size="250" />
                   <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#a3b7ca" height="74.0" layoutX="341.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" width="319.0" />
                   <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#a3b7ca" height="74.0" layoutX="672.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" width="198.0" />
-                  <Label alignment="CENTER" layoutX="684.0" layoutY="70.0" prefHeight="63.0" prefWidth="174.0" text="AGE" textFill="#061742">
+                  <Label fx:id="dashboardAgeLabel" alignment="CENTER" layoutX="684.0" layoutY="70.0" prefHeight="63.0" prefWidth="174.0" text="AGE" textFill="#061742">
                      <font>
-                        <Font name="3270 Nerd Font Mono" size="40.0" />
+                        <Font name="Arial Rounded MT Bold" size="27.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="361.0" layoutY="70.0" prefHeight="63.0" prefWidth="280.0" text="NAME" textFill="#061742">
+                  <Label fx:id="dashboardNameLabel" alignment="CENTER" layoutX="361.0" layoutY="70.0" prefHeight="63.0" prefWidth="280.0" text="NAME" textFill="#061742">
                      <font>
-                        <Font name="3270 Nerd Font Mono" size="40.0" />
+                        <Font name="Arial Rounded MT Bold" size="27.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#a3b7ca" height="75.0" layoutX="523.0" layoutY="172.0" stroke="BLACK" strokeType="INSIDE" width="347.0" />
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#a3b7ca" height="75.0" layoutX="341.0" layoutY="173.0" stroke="BLACK" strokeType="INSIDE" width="170.0" />
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#a3b7ca" height="74.0" layoutX="341.0" layoutY="281.0" stroke="BLACK" strokeType="INSIDE" width="251.0" />
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#a3b7ca" height="74.0" layoutX="601.0" layoutY="281.0" stroke="BLACK" strokeType="INSIDE" width="276.0" />
+                  <Label fx:id="dashboardPhoneNumberLabel" alignment="CENTER" layoutX="540.0" layoutY="179.0" prefHeight="63.0" prefWidth="313.0" text="PHONE NO" textFill="#061742">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="27.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dashboardUserIDLabel" alignment="CENTER" layoutX="353.0" layoutY="287.0" prefHeight="63.0" prefWidth="227.0" text="USER ID" textFill="#061742">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="27.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dashboardDepartmentLabel" alignment="CENTER" layoutX="355.0" layoutY="179.0" prefHeight="63.0" prefWidth="142.0" text="DEPT" textFill="#061742">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="27.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dashboardBalanceLabel" alignment="CENTER" layoutX="619.0" layoutY="287.0" prefHeight="63.0" prefWidth="233.0" text="BALANCE" textFill="#061742">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="27.0" />
                      </font>
                   </Label>
                </children>
