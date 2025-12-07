@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -9,105 +10,110 @@
    <children>
       <Rectangle arcHeight="50.0" arcWidth="50.0" disable="true" fill="#061742" height="639.0" layoutX="53.0" layoutY="41.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="822.0" />
       <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#a3b7ca" height="260.0" layoutX="79.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="769.0" />
-      <Button layoutX="80.0" layoutY="360.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="7">
+      <Button focusTraversable="false" layoutX="80.0" layoutY="360.0" mnemonicParsing="false" onAction="#onNumberClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="7">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="80.0" layoutY="452.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="4">
+      <Button focusTraversable="false" layoutX="80.0" layoutY="452.0" mnemonicParsing="false" onAction="#onNumberClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="4">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="80.0" layoutY="544.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="1">
+      <Button focusTraversable="false" layoutX="80.0" layoutY="544.0" mnemonicParsing="false" onAction="#onNumberClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="1">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="192.0" layoutY="360.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="8">
+      <Button focusTraversable="false" layoutX="192.0" layoutY="360.0" mnemonicParsing="false" onAction="#onNumberClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="8">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="192.0" layoutY="452.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="5">
+      <Button focusTraversable="false" layoutX="192.0" layoutY="452.0" mnemonicParsing="false" onAction="#onNumberClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="5">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="192.0" layoutY="544.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="2">
+      <Button focusTraversable="false" layoutX="192.0" layoutY="544.0" mnemonicParsing="false" onAction="#onNumberClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="2">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="304.0" layoutY="360.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="9">
+      <Button focusTraversable="false" layoutX="304.0" layoutY="360.0" mnemonicParsing="false" onAction="#onNumberClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="9">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="304.0" layoutY="452.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="6">
+      <Button focusTraversable="false" layoutX="304.0" layoutY="452.0" mnemonicParsing="false" onAction="#onNumberClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="6">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="304.0" layoutY="544.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="3">
+      <Button focusTraversable="false" layoutX="304.0" layoutY="544.0" mnemonicParsing="false" onAction="#onNumberClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="3">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="416.0" layoutY="360.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="167.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="+">
+      <Button focusTraversable="false" layoutX="416.0" layoutY="360.0" mnemonicParsing="false" onAction="#onOperatorClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="167.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="+">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="416.0" layoutY="544.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="0">
+      <Button focusTraversable="false" layoutX="416.0" layoutY="544.0" mnemonicParsing="false" onAction="#onNumberClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="0">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="528.0" layoutY="360.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="X">
+      <Button focusTraversable="false" layoutX="528.0" layoutY="360.0" mnemonicParsing="false" onAction="#onOperatorClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="X">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="528.0" layoutY="452.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="-">
+      <Button focusTraversable="false" layoutX="528.0" layoutY="452.0" mnemonicParsing="false" onAction="#onOperatorClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="-">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="528.0" layoutY="544.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="=">
+      <Button focusTraversable="false" layoutX="528.0" layoutY="544.0" mnemonicParsing="false" onAction="#onEqualClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="=">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="640.0" layoutY="360.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="C">
+      <Button focusTraversable="false" layoutX="640.0" layoutY="360.0" mnemonicParsing="false" onAction="#onCClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="C">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="640.0" layoutY="452.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="\%">
+      <Button focusTraversable="false" layoutX="640.0" layoutY="452.0" mnemonicParsing="false" onAction="#onOperatorClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="\%">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="640.0" layoutY="544.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="/">
+      <Button focusTraversable="false" layoutX="640.0" layoutY="544.0" mnemonicParsing="false" onAction="#onOperatorClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="/">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="752.0" layoutY="360.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="96.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="AC">
+      <Button focusTraversable="false" layoutX="752.0" layoutY="360.0" mnemonicParsing="false" onAction="#onACClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="96.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="AC">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="752.0" layoutY="452.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="96.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="Solve">
+      <Button focusTraversable="false" layoutX="752.0" layoutY="452.0" mnemonicParsing="false" onAction="#onEqualClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="96.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="Solve">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="752.0" layoutY="544.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="96.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="Back">
+      <Button focusTraversable="false" layoutX="752.0" layoutY="544.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="96.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;" text="Back">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
+      <TextField fx:id="calculateBox" alignment="CENTER_RIGHT" editable="false" focusTraversable="false" layoutX="100.0" layoutY="102.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="187.0" prefWidth="733.0" style="-fx-background-radius: 20; -fx-background-color: #a3b7ca;">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="72.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>
