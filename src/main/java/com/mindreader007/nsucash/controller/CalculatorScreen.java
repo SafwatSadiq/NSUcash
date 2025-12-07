@@ -58,7 +58,6 @@ public class CalculatorScreen {
     }
 
     public void onEqualClick(ActionEvent event) {
-        String value = getActionValue(event);
         if (isNumeric(calculateBox.getText())) {
             calculateBox.setText(String.valueOf((int) calculate(FirstNumber, Operator)));
             startNew = true;
@@ -66,8 +65,8 @@ public class CalculatorScreen {
     }
 
     public void onCClick(ActionEvent event){
-        String value = getActionValue(event);
-        System.out.println(value);
+        calculateBox.setText("");
+        startNew = true;
     }
 
     public void onACClick(ActionEvent event){
