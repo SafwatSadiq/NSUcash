@@ -6,6 +6,8 @@ import com.mindreader007.nsucash.model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDAO {
     public static boolean validateLogin(String username, String password) {
@@ -27,5 +29,21 @@ public class UserDAO {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public static List<String> getAllUserNames(){
+        List<String> list = new ArrayList<>();
+        String sql = "SELECT username FROM users";
+
+        try(Connection conn = Database.connect();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                list.add(rs.getString("username"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 }
