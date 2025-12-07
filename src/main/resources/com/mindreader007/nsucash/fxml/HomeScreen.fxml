@@ -63,10 +63,10 @@
                         <FontAwesomeIconView fill="#d1dbe4" glyphName="CALCULATOR" />
                      </graphic>
                   </Button>
-                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#a3b7ca" height="291.0" layoutX="59.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" width="256.0" />
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="291.0" layoutX="59.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" width="256.0" />
                   <FontAwesomeIconView fill="#061742" glyphName="USER" layoutX="98.0" layoutY="299.0" size="250" />
-                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#a3b7ca" height="74.0" layoutX="341.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" width="319.0" />
-                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#a3b7ca" height="74.0" layoutX="672.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" width="198.0" />
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="74.0" layoutX="341.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" width="319.0" />
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="74.0" layoutX="672.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" width="198.0" />
                   <Label fx:id="dashboardAgeLabel" alignment="CENTER" layoutX="684.0" layoutY="70.0" prefHeight="63.0" prefWidth="174.0" text="AGE" textFill="#061742">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="27.0" />
@@ -77,10 +77,10 @@
                         <Font name="Arial Rounded MT Bold" size="27.0" />
                      </font>
                   </Label>
-                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#a3b7ca" height="75.0" layoutX="523.0" layoutY="172.0" stroke="BLACK" strokeType="INSIDE" width="347.0" />
-                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#a3b7ca" height="75.0" layoutX="341.0" layoutY="173.0" stroke="BLACK" strokeType="INSIDE" width="170.0" />
-                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#a3b7ca" height="74.0" layoutX="341.0" layoutY="281.0" stroke="BLACK" strokeType="INSIDE" width="251.0" />
-                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#a3b7ca" height="74.0" layoutX="601.0" layoutY="281.0" stroke="BLACK" strokeType="INSIDE" width="276.0" />
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="75.0" layoutX="523.0" layoutY="172.0" stroke="BLACK" strokeType="INSIDE" width="347.0" />
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="75.0" layoutX="341.0" layoutY="173.0" stroke="BLACK" strokeType="INSIDE" width="170.0" />
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="74.0" layoutX="341.0" layoutY="281.0" stroke="BLACK" strokeType="INSIDE" width="251.0" />
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="74.0" layoutX="601.0" layoutY="281.0" stroke="BLACK" strokeType="INSIDE" width="276.0" />
                   <Label fx:id="dashboardPhoneNumberLabel" alignment="CENTER" layoutX="540.0" layoutY="179.0" prefHeight="63.0" prefWidth="313.0" text="PHONE NO" textFill="#061742">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="27.0" />

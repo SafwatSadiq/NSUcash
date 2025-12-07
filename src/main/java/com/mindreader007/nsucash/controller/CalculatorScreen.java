@@ -9,8 +9,8 @@ import javafx.scene.input.MouseEvent;
 import javax.swing.*;
 
 public class CalculatorScreen {
-    private String onHoverStyle = "-fx-background-color: #d1dbe4; -fx-background-radius: 20; -fx-text-fill: #061742;";
-    private String defaultStyle = "-fx-background-radius: 20; -fx-background-color: #a3b7ca; -fx-text-fill: #061742;";
+    private String onHoverStyle = "-fx-background-color: #a3b7ca; -fx-background-radius: 20; -fx-text-fill: #061742;";
+    private String defaultStyle = "-fx-background-radius: 20; -fx-background-color: #d1dbe4; -fx-text-fill: #061742;";
 
     private double FirstNumber;
     private double SecondNumber;
@@ -71,8 +71,10 @@ public class CalculatorScreen {
     }
 
     public void onACClick(ActionEvent event){
-        String value = getActionValue(event);
-        System.out.println(value);
+        calculateBox.clear();
+        FirstNumber = 0;
+        SecondNumber = 0;
+        Operator = null;
     }
 
     public static boolean isNumeric(String str) {
@@ -86,6 +88,8 @@ public class CalculatorScreen {
     }
 
     public double calculate(double firstNumber, String operator) {
+        if (operator == null) return Double.parseDouble(calculateBox.getText());
+
         double secondNumber = Double.parseDouble(calculateBox.getText());
         double result = 0;
         switch (operator) {
