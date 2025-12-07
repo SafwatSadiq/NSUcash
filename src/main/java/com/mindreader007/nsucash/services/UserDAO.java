@@ -46,4 +46,28 @@ public class UserDAO {
         }
         return list;
     }
+
+    public static List<String> searchInDatabase(String query) {
+
+        List<String> list = new ArrayList<>();
+
+        String sql = "SELECT username FROM users WHERE username LIKE ? LIMIT 10";
+
+        try (Connection conn = Database.connect();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setString(1, query + "%");  // starts with search
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                list.add(rs.getString("username"));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+
 }
