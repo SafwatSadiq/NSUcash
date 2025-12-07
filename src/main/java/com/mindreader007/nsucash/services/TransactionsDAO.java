@@ -17,7 +17,7 @@ public class TransactionsDAO {
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, username);
-            ps.setString(2, type); // 'canteen', 'bus', 'advising', 'transfer', 'bookshop'
+            ps.setString(2, type); // 'canteen', 'bus', 'advising', 'transfer', 'bookshop', 'topup'
             ps.setDouble(3, value);
 
             ps.executeUpdate();

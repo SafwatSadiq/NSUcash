@@ -14,7 +14,7 @@ public class SetupDatabase {
                 "transaction_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "username TEXT NOT NULL," +
                 "date_time TEXT NOT NULL," +
-                "type TEXT NOT NULL CHECK(type IN ('canteen', 'bus', 'advising', 'transfer', 'bookshop'))," +
+                "type TEXT NOT NULL CHECK(type IN ('canteen', 'bus', 'advising', 'transfer', 'bookshop', 'topup'))," +
                 "value REAL NOT NULL," +
                 "FOREIGN KEY(username) REFERENCES accounts(username)" +
                 ");";
