@@ -105,7 +105,7 @@
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button focusTraversable="false" layoutX="752.0" layoutY="544.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="96.0" style="-fx-background-radius: 20; -fx-background-color: #d1dbe4; -fx-text-fill: #061742;" text="Back">
+      <Button focusTraversable="false" layoutX="752.0" layoutY="544.0" mnemonicParsing="false" onAction="#onBackClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="75.0" prefWidth="96.0" style="-fx-background-radius: 20; -fx-background-color: #d1dbe4; -fx-text-fill: #061742;" text="Back">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
