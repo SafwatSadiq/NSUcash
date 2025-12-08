@@ -63,17 +63,17 @@
             <Font name="Arial Rounded MT Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="499.0" layoutY="505.0" maxHeight="48.0" maxWidth="290.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="290.0" style="-fx-background-radius: 30; -fx-background-color: #d1dbe4;">
+      <Button focusTraversable="false" layoutX="499.0" layoutY="505.0" maxHeight="48.0" maxWidth="290.0" mnemonicParsing="false" onAction="#checkPassword" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="48.0" prefWidth="290.0" style="-fx-background-radius: 30; -fx-background-color: #d1dbe4;">
          <graphic>
             <FontAwesomeIconView glyphName="LONG_ARROW_RIGHT" size="40" text="" />
          </graphic>
       </Button>
-      <Label alignment="CENTER" layoutX="138.0" layoutY="505.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="290.0" style="-fx-background-color: #d1dbe4; -fx-background-radius: 20;" text="Invaild">
+      <Label alignment="CENTER" layoutX="138.0" layoutY="505.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="290.0" style="-fx-background-color: #d1dbe4; -fx-background-radius: 20;" text="Be Careful!">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Label>
-      <PasswordField layoutX="138.0" layoutY="423.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="290.0" promptText="Password" style="-fx-background-radius: 20; -fx-background-color: #d1dbe4;">
+      <PasswordField fx:id="passwordInputField" layoutX="138.0" layoutY="423.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="290.0" promptText="Password" style="-fx-background-radius: 20; -fx-background-color: #d1dbe4;">
          <padding>
             <Insets left="20.0" />
          </padding>

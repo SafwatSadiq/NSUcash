@@ -4,10 +4,8 @@ import com.mindreader007.nsucash.services.UserDAO;
 import com.mindreader007.nsucash.services.UserSession;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
@@ -16,6 +14,9 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class TransferScreen implements Initializable {
+    private String onHoverStyle = "-fx-background-color: #a3b7ca; -fx-background-radius: 20; -fx-text-fill: #061742;";
+    private String defaultStyle = "-fx-background-radius: 20; -fx-background-color: #d1dbe4; -fx-text-fill: #061742;";
+
     @FXML
     private Label balanceLabel;
     @FXML
@@ -24,6 +25,8 @@ public class TransferScreen implements Initializable {
     private TextField usernameSearchField;
     @FXML
     private ListView<String> usernameSuggestionList;
+    @FXML
+    private PasswordField passwordInputField;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -127,5 +130,24 @@ public class TransferScreen implements Initializable {
         }
     }
 
+    public void onHoverButton(MouseEvent event){
+        Button btn = (Button) event.getSource();
+        btn.setStyle(onHoverStyle);
+    }
 
+    public void onHoverExitButton(MouseEvent event){
+        Button btn = (Button) event.getSource();
+        btn.setStyle(defaultStyle);
+    }
+
+    public boolean checkPassword(){
+        String password = passwordInputField.getText();
+        String username = UserSession.getUser().getUsername();
+
+        return UserDAO.validateLogin(username, password);
+    }
+
+//    public boolean checkIfUsernameExists(){
+//
+//    }
 }
