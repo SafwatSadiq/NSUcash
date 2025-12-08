@@ -1,5 +1,7 @@
 package com.mindreader007.nsucash.controller;
 
+import com.mindreader007.nsucash.services.AccountsDAO;
+import com.mindreader007.nsucash.services.TransactionsDAO;
 import com.mindreader007.nsucash.services.UserDAO;
 import com.mindreader007.nsucash.services.UserSession;
 import javafx.fxml.FXML;
@@ -155,7 +157,7 @@ public class TransferScreen implements Initializable {
     }
 
     public boolean isTransferAmountValid(){
-        return isNumeric(balanceLabel.getText());
+        return isNumeric(balanceLabel.getText()) && (Double.parseDouble(transferAmountInputField.getText()) > 0);
     }
 
     public boolean areAllInfoValid(){
@@ -179,7 +181,12 @@ public class TransferScreen implements Initializable {
 
     public void proceedPayment(){
         if(areAllInfoValid()){
-            System.out.println("Payment Done");
+            AccountsDAO.incrementBalance(usernameSearchField.getText(), Double.parseDouble(transferAmountInputField.getText()));
+            AccountsDAO.decrementBalance(UserSession.getUser().getUsername(), Double.parseDouble(transferAmountInputField.getText()));
+
+            TransactionsDAO.addTransaction(usernameSearchField.getText(), "transfer", Double.parseDouble(transferAmountInputField.getText()));
+            TransactionsDAO.addTransaction(UserSession.getUser().getUsername(), "transfer", -Double.parseDouble(transferAmountInputField.getText()));
+            UserSession.updateUser(AccountsDAO.getUser(UserSession.getUser().getUsername()));
         }
     }
 }

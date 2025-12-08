@@ -16,4 +16,8 @@ public class UserSession {
     public static void endSession() {
         loggedInUser = null;
     }
+
+    public static void updateUser(User user){
+        loggedInUser = user;
+    }
 }

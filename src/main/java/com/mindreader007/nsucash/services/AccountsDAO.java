@@ -6,6 +6,7 @@ import com.mindreader007.nsucash.model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class AccountsDAO {
     public static User getUser(String username){
@@ -34,5 +35,35 @@ public class AccountsDAO {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static void incrementBalance(String username, double amount){
+        String query = "UPDATE accounts SET balance = balance + ? WHERE username = ?";
+
+        try (Connection conn = Database.connect();
+        PreparedStatement ps = conn.prepareStatement(query)){
+            ps.setDouble(1, amount);
+            ps.setString(2, username);
+
+            ps.executeUpdate();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void decrementBalance(String username, double amount){
+        String query = "UPDATE accounts SET balance = balance - ? WHERE username = ?";
+
+        try (Connection conn = Database.connect();
+             PreparedStatement ps = conn.prepareStatement(query)){
+            ps.setDouble(1, amount);
+            ps.setString(2, username);
+
+            ps.executeUpdate();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 }
