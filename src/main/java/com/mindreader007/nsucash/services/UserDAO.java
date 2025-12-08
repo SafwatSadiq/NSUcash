@@ -56,7 +56,7 @@ public class UserDAO {
         try (Connection conn = Database.connect();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            ps.setString(1, query + "%");  // starts with search
+            ps.setString(1, query + "%");
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -68,6 +68,22 @@ public class UserDAO {
         }
 
         return list;
+    }
+
+    public static boolean usernameExists(String username){
+        String query = "SELECT 1 FROM users WHERE username = ? LIMIT 1";
+
+        try (Connection conn = Database.connect();
+            PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setString(1, username);
+            ResultSet rs = ps.executeQuery();
+            return rs.next();
+
+        } catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+
     }
 
 }

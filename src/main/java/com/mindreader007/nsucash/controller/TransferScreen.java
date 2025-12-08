@@ -27,6 +27,8 @@ public class TransferScreen implements Initializable {
     private ListView<String> usernameSuggestionList;
     @FXML
     private PasswordField passwordInputField;
+    @FXML
+    private Label paymentStatus;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -147,7 +149,37 @@ public class TransferScreen implements Initializable {
         return UserDAO.validateLogin(username, password);
     }
 
-//    public boolean checkIfUsernameExists(){
-//
-//    }
+    public boolean checkIfUsernameExists(){
+        String username = usernameSearchField.getText();
+        return UserDAO.usernameExists(username);
+    }
+
+    public boolean isTransferAmountValid(){
+        return isNumeric(balanceLabel.getText());
+    }
+
+    public boolean areAllInfoValid(){
+        if(!checkPassword()){
+            paymentStatus.setText("Wrong Password");
+            return false;
+        }
+        else if(!checkIfUsernameExists()){
+            paymentStatus.setText("Username Not Found");
+            return false;
+        }
+        else if(!isTransferAmountValid()){
+            paymentStatus.setText("Invalid Amount");
+            return false;
+        }
+        else {
+            paymentStatus.setText("Success");
+            return true;
+        }
+    }
+
+    public void proceedPayment(){
+        if(areAllInfoValid()){
+            System.out.println("Payment Done");
+        }
+    }
 }
