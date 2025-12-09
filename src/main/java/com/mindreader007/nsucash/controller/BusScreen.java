@@ -1,10 +1,7 @@
 package com.mindreader007.nsucash.controller;
 
-import com.mindreader007.nsucash.model.Route;
-import com.mindreader007.nsucash.model.RouteStop;
-import com.mindreader007.nsucash.model.Schedule;
-import com.mindreader007.nsucash.services.BusService;
-import com.mindreader007.nsucash.services.UserSession;
+import com.mindreader007.nsucash.model.*;
+import com.mindreader007.nsucash.services.*;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -39,6 +36,7 @@ public class BusScreen{
     private CheckBox fromNsuCheckBox;
 
     private BusService busService = new BusService();
+    private Double TicketPrice = 200.0;
 
 
     @FXML
@@ -109,6 +107,7 @@ public class BusScreen{
 
     public void onPressedBookButton() throws SQLException {
         Schedule selectedSchedule = scheduleTable.getSelectionModel().getSelectedItem();
+        BookingDAO bookingDAO = new BookingDAO();
 
         if(selectedSchedule == null){
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -137,9 +136,18 @@ public class BusScreen{
             return;
         }
 
-//        selectedSchedule.setAvailableSeat(selectedSchedule.getAvailableSeat() - 1);
-//        BusService busService = new BusService();
-//        busService.reduceSeatCount(selectedSchedule.getScheduleId());
+        if(bookingDAO.bookingExists(UserSession.getUser().getUsername())){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Previous Booking Exists");
+            alert.setHeaderText(null);
+            alert.setContentText("Cancel Your Previous Booking Before Booking Again");
+            alert.showAndWait();
+            return;
+        }
+
+        selectedSchedule.setAvailableSeat(selectedSchedule.getAvailableSeat() - 1);
+        BusService busService = new BusService();
+        busService.reduceSeatCount(selectedSchedule.getScheduleId());
 
         scheduleTable.refresh();
 
@@ -157,6 +165,11 @@ public class BusScreen{
                 "\nStop Times: " + selectedSchedule.getStopTimes() +
                 "\nStops: " + stopsString);
         alert.showAndWait();
+
+        TransactionsDAO.addTransaction(UserSession.getUser().getUsername(), "bus", -TicketPrice);
+        AccountsDAO.decrementBalance(UserSession.getUser().getUsername(), TicketPrice);
+        bookingDAO.addBooking(UserSession.getUser().getUsername(), selectedSchedule.getScheduleId(), stopsString);
+        UserSession.updateUser(UserSession.getUser());
     }
 
     public void onHoverButton(MouseEvent event){
