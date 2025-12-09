@@ -68,7 +68,7 @@
             </AnchorPane>
          </children>
       </VBox>
-      <Button layoutX="707.0" layoutY="557.0" mnemonicParsing="false" onAction="#onPressedBookButton" prefHeight="133.0" prefWidth="205.0" style="-fx-background-color: #061742; -fx-background-radius: 10 10 20 20;" text="BOOK" textFill="#d1dbe4">
+      <Button layoutX="707.0" layoutY="557.0" mnemonicParsing="false" onAction="#onPressedBookButton" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="133.0" prefWidth="205.0" style="-fx-background-color: #061742; -fx-background-radius: 10 10 20 20;" text="BOOK" textFill="#d1dbe4">
          <font>
             <Font name="Arial Rounded MT Bold" size="36.0" />
          </font>
