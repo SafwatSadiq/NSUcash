@@ -7,14 +7,10 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 
-import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.ResourceBundle;
 
 public class BusScreen{
     @FXML
@@ -29,6 +25,12 @@ public class BusScreen{
     private TableColumn<Schedule, Integer> seatsColumn;
     @FXML
     private TableColumn<Schedule, String> stopsColumn;
+    @FXML
+    private ListView<String> locationListView;
+    @FXML
+    private CheckBox toNsuCheckBox;
+    @FXML
+    private CheckBox fromNsuCheckBox;
 
     private BusService busService = new BusService();
 
@@ -50,10 +52,52 @@ public class BusScreen{
 
 
         List<String> stops = busService.getAllStops();
+        locationListView.getItems().addAll(stops);
+        locationListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+
 
         List<Schedule> allSchedules = busService.getAllSchedules();
         scheduleTable.setItems(FXCollections.observableArrayList(allSchedules));
     }
 
-
+    @FXML
+    private void applyFilter() throws SQLException {
+        String selectedStop = locationListView.getSelectionModel().getSelectedItem();
+        if (selectedStop != null) {
+            if(toNsuCheckBox.isSelected() && fromNsuCheckBox.isSelected()){
+                List<Schedule> filtered = busService.searchSchedules(selectedStop, null);
+                scheduleTable.setItems(FXCollections.observableArrayList(filtered));
+            }
+            else if(toNsuCheckBox.isSelected()){
+                List<Schedule> filtered = busService.searchSchedules(selectedStop, "TO_NSU");
+                scheduleTable.setItems(FXCollections.observableArrayList(filtered));
+            }
+            else if(fromNsuCheckBox.isSelected()){
+                List<Schedule> filtered = busService.searchSchedules(selectedStop, "FROM_NSU");
+                scheduleTable.setItems(FXCollections.observableArrayList(filtered));
+            }
+            else{
+                List<Schedule> filtered = busService.searchSchedules(selectedStop, null);
+                scheduleTable.setItems(FXCollections.observableArrayList(filtered));
+            }
+        }
+        else{
+            if(toNsuCheckBox.isSelected() && fromNsuCheckBox.isSelected()){
+                List<Schedule> filtered = busService.searchSchedules(null, null);
+                scheduleTable.setItems(FXCollections.observableArrayList(filtered));
+            }
+            else if(toNsuCheckBox.isSelected()){
+                List<Schedule> filtered = busService.searchSchedules(null, "TO_NSU");
+                scheduleTable.setItems(FXCollections.observableArrayList(filtered));
+            }
+            else if(fromNsuCheckBox.isSelected()){
+                List<Schedule> filtered = busService.searchSchedules(null, "FROM_NSU");
+                scheduleTable.setItems(FXCollections.observableArrayList(filtered));
+            }
+            else{
+                List<Schedule> filtered = busService.searchSchedules(null, null);
+                scheduleTable.setItems(FXCollections.observableArrayList(filtered));
+            }
+        }
+    }
 }
