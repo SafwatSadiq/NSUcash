@@ -2,7 +2,7 @@ package com.mindreader007.nsucash.model;
 
 public class Booking {
     private int bookingId;
-    private int userId;
+    private String username;
     private int scheduleId;
     private String bookingTime;
     private String busName;
@@ -10,10 +10,10 @@ public class Booking {
     private String stopTimes;
     private String stops;
 
-    public Booking(int bookingId, int userId, int scheduleId, String bookingTime,
+    public Booking(int bookingId, String username, int scheduleId, String bookingTime,
                    String busName, String direction, String stopTimes, String stops) {
         this.bookingId = bookingId;
-        this.userId = userId;
+        this.username = username;
         this.scheduleId = scheduleId;
         this.bookingTime = bookingTime;
         this.busName = busName;
