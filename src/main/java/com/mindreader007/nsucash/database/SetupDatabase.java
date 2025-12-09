@@ -29,12 +29,46 @@ public class SetupDatabase {
                 "balance REAL DEFAULT 0" +
                 ");";
 
+        String buses = "CREATE TABLE buses (" +
+                "bus_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "bus_name TEXT NOT NULL UNIQUE" +
+                ");";
+
+        String routes = "CREATE TABLE routes (" +
+                "route_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "bus_id INTEGER NOT NULL," +
+                "direction TEXT NOT NULL CHECK(direction IN ('TO_NSU', 'FROM_NSU'))," +
+                "FOREIGN KEY (bus_id) REFERENCES buses(bus_id)" +
+                ");";
+
+        String route_stops = "CREATE TABLE route_stops (" +
+                "stop_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "route_id INTEGER NOT NULL," +
+                "stop_order INTEGER NOT NULL," +
+                "stop_name TEXT NOT NULL," +
+                "FOREIGN KEY (route_id) REFERENCES routes(route_id)" +
+                ");";
+
+        String schedules = "CREATE TABLE schedules (" +
+                "schedule_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "route_id INTEGER NOT NULL," +
+                "stop_times TEXT NOT NULL," +
+                "available_seat INTEGER NOT NULL," +
+                "FOREIGN KEY (route_id) REFERENCES routes(route_id)" +
+                ");";
+
         try (Connection conn = Database.connect();
              var stmt = conn.createStatement()) {
 
             stmt.execute(sql);
             stmt.execute(sqltransaction);
             stmt.execute(sqlaccounts);
+
+            stmt.execute(buses);
+            stmt.execute(routes);
+            stmt.execute(route_stops);
+            stmt.execute(schedules);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
