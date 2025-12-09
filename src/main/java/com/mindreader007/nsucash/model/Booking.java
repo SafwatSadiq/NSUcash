@@ -27,10 +27,6 @@ public class Booking {
         return bookingId;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
     public int getScheduleId() {
         return scheduleId;
     }
@@ -53,6 +49,10 @@ public class Booking {
 
     public String getStops() {
         return stops;
+    }
+
+    public String getUsername() {
+        return username;
     }
 }
 
