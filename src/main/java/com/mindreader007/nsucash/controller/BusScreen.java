@@ -190,6 +190,4 @@ public class BusScreen{
     private boolean checkIfSeatAvailable(Schedule selectedSchedule){
         return selectedSchedule.getAvailableSeat() > 0;
     }
-
-    //TODO 3: check previous booking
 }
