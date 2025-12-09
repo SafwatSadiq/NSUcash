@@ -4,6 +4,7 @@ import com.mindreader007.nsucash.model.Route;
 import com.mindreader007.nsucash.model.RouteStop;
 import com.mindreader007.nsucash.model.Schedule;
 import com.mindreader007.nsucash.services.BusService;
+import com.mindreader007.nsucash.services.UserSession;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -118,6 +119,24 @@ public class BusScreen{
             return;
         }
 
+        if(!checkIfSeatAvailable(selectedSchedule)){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Seat Not Available ");
+            alert.setHeaderText(null);
+            alert.setContentText("Sorry All Seats For This Bus Has Already Been Booked");
+            alert.showAndWait();
+            return;
+        }
+
+        if(!checkIfSufficientBalanceAvailable()){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("InSufficient Balance");
+            alert.setHeaderText(null);
+            alert.setContentText("You Need To Have At Least 200 Taka In Your Account");
+            alert.showAndWait();
+            return;
+        }
+
 //        selectedSchedule.setAvailableSeat(selectedSchedule.getAvailableSeat() - 1);
 //        BusService busService = new BusService();
 //        busService.reduceSeatCount(selectedSchedule.getScheduleId());
@@ -150,7 +169,14 @@ public class BusScreen{
         btn.setStyle(defaultStyle);
     }
 
-    //TODO 1: check if money available
-    //TODO 2: check if seat available
+    private boolean checkIfSufficientBalanceAvailable(){
+        double balance = UserSession.getUser().getBalance();
+        return balance >= 200;
+    }
+
+    private boolean checkIfSeatAvailable(Schedule selectedSchedule){
+        return selectedSchedule.getAvailableSeat() > 0;
+    }
+
     //TODO 3: check previous booking
 }

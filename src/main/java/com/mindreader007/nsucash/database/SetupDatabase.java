@@ -57,6 +57,15 @@ public class SetupDatabase {
                 "FOREIGN KEY (route_id) REFERENCES routes(route_id)" +
                 ");";
 
+        String bookings = "CREATE TABLE IF NOT EXISTS bookings (" +
+                " booking_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                " user_id INTEGER NOT NULL," +
+                " schedule_id INTEGER NOT NULL," +
+                " booking_time TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP," +
+                " FOREIGN KEY(user_id) REFERENCES users(user_id)," +
+                " FOREIGN KEY(schedule_id) REFERENCES schedules(schedule_id)" +
+                ");";
+
         try (Connection conn = Database.connect();
              var stmt = conn.createStatement()) {
 
