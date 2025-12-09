@@ -59,11 +59,11 @@ public class SetupDatabase {
 
         String bookings = "CREATE TABLE IF NOT EXISTS bookings (" +
                 "booking_id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "user_id INTEGER NOT NULL," +
+                "username TEXT NOT NULL," +
                 "schedule_id INTEGER NOT NULL," +
                 "stops TEXT NOT NULL," +
                 "booking_time TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP," +
-                "FOREIGN KEY(user_id) REFERENCES users(user_id)," +
+                "FOREIGN KEY(username) REFERENCES accounts(username)," +
                 "FOREIGN KEY(schedule_id) REFERENCES schedules(schedule_id)" +
                 ");";
 
