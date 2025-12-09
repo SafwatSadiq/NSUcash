@@ -29,19 +29,19 @@ public class SetupDatabase {
                 "balance REAL DEFAULT 0" +
                 ");";
 
-        String buses = "CREATE TABLE buses (" +
+        String buses = "CREATE TABLE IF NOT EXISTS buses (" +
                 "bus_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "bus_name TEXT NOT NULL UNIQUE" +
                 ");";
 
-        String routes = "CREATE TABLE routes (" +
+        String routes = "CREATE TABLE IF NOT EXISTS routes (" +
                 "route_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "bus_id INTEGER NOT NULL," +
                 "direction TEXT NOT NULL CHECK(direction IN ('TO_NSU', 'FROM_NSU'))," +
                 "FOREIGN KEY (bus_id) REFERENCES buses(bus_id)" +
                 ");";
 
-        String route_stops = "CREATE TABLE route_stops (" +
+        String route_stops = "CREATE TABLE IF NOT EXISTS route_stops (" +
                 "stop_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "route_id INTEGER NOT NULL," +
                 "stop_order INTEGER NOT NULL," +
@@ -49,7 +49,7 @@ public class SetupDatabase {
                 "FOREIGN KEY (route_id) REFERENCES routes(route_id)" +
                 ");";
 
-        String schedules = "CREATE TABLE schedules (" +
+        String schedules = "CREATE TABLE IF NOT EXISTS schedules (" +
                 "schedule_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "route_id INTEGER NOT NULL," +
                 "stop_times TEXT NOT NULL," +
