@@ -15,7 +15,7 @@ public class ScheduleDAO {
             ps.setInt(1, routeId);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                schedules.add(new Schedule(rs.getInt("schedule_id"), rs.getInt("route_id"), rs.getString("stop_times"), rs.getInt("available_seat")));
+                schedules.add(new Schedule(rs.getInt("schedule_id"), null, rs.getString("stop_times"), rs.getInt("available_seat")));
             }
         }
         return schedules;

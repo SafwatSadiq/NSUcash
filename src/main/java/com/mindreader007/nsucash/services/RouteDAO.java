@@ -15,7 +15,7 @@ public class RouteDAO {
             ps.setInt(1, busId);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                routes.add(new Route(rs.getInt("route_id"), rs.getInt("bus_id"), rs.getString("direction")));
+                routes.add(new Route(rs.getInt("route_id"), null, rs.getString("direction")));
             }
         }
         return routes;

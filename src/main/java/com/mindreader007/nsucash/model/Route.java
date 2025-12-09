@@ -4,22 +4,22 @@ import java.util.List;
 
 public class Route {
     private int routeId;
-    private int busId;
+    private Bus bus;
     private String direction; // TO_NSU or FROM_NSU
     private List<RouteStop> stops;
     private List<Schedule> schedules;
 
-    public Route(int routeId, int busId, String direction) {
+    public Route(int routeId, Bus bus, String direction) {
         this.routeId = routeId;
-        this.busId = busId;
+        this.bus = bus;
         this.direction = direction;
     }
 
     public int getRouteId() { return routeId; }
     public void setRouteId(int routeId) { this.routeId = routeId; }
 
-    public int getBusId() { return busId; }
-    public void setBusId(int busId) { this.busId = busId; }
+    public Bus getBus() { return bus; }
+    public void setBus(Bus bus) { this.bus = bus; }
 
     public String getDirection() { return direction; }
     public void setDirection(String direction) { this.direction = direction; }
@@ -30,4 +30,3 @@ public class Route {
     public List<Schedule> getSchedules() { return schedules; }
     public void setSchedules(List<Schedule> schedules) { this.schedules = schedules; }
 }
-

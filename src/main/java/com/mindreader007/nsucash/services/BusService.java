@@ -2,6 +2,7 @@ package com.mindreader007.nsucash.services;
 
 import com.mindreader007.nsucash.model.Bus;
 import com.mindreader007.nsucash.model.Route;
+import com.mindreader007.nsucash.model.RouteStop;
 import com.mindreader007.nsucash.model.Schedule;
 
 import java.sql.SQLException;
@@ -21,8 +22,13 @@ public class BusService {
         for (Bus bus : buses) {
             List<Route> routes = routeDAO.getRoutesByBus(bus.getBusId());
             for (Route route : routes) {
+                route.setBus(bus);
                 route.setStops(stopDAO.getStopsByRoute(route.getRouteId()));
-                route.setSchedules(scheduleDAO.getSchedulesByRoute(route.getRouteId()));
+                List<Schedule> schedules = scheduleDAO.getSchedulesByRoute(route.getRouteId());
+                for (Schedule schedule : schedules) {
+                    schedule.setRoute(route);
+                }
+                route.setSchedules(schedules);
             }
             bus.setRoutes(routes);
         }
@@ -56,20 +62,40 @@ public class BusService {
     }
 
     public void reduceSeatCount(int scheduleId) throws SQLException {
-        List<Schedule> schedules = new ArrayList<>();
         for (Bus bus : getAllBusesWithDetails()) {
             for (Route route : bus.getRoutes()) {
                 for (Schedule schedule : route.getSchedules()) {
-                    if (schedule.getScheduleId() == scheduleId) {
-                        int seats = schedule.getAvailableSeat();
-                        if (seats > 0) {
-                            schedule.setAvailableSeat(seats - 1);
-                            scheduleDAO.reduceSeatCount(scheduleId);
-                        }
+                    if (schedule.getScheduleId() == scheduleId && schedule.getAvailableSeat() > 0) {
+                        schedule.setAvailableSeat(schedule.getAvailableSeat() - 1);
+                        scheduleDAO.reduceSeatCount(scheduleId);
+                        return;
                     }
                 }
             }
         }
     }
-}
 
+    public List<String> getAllStops() throws SQLException {
+        List<String> stops = new ArrayList<>();
+        for (Bus bus : getAllBusesWithDetails()) {
+            for (Route route : bus.getRoutes()) {
+                for (RouteStop stop : route.getStops()) {
+                    if (!stops.contains(stop.getStopName())) {
+                        stops.add(stop.getStopName());
+                    }
+                }
+            }
+        }
+        return stops;
+    }
+
+    public List<Schedule> getAllSchedules() throws SQLException {
+        List<Schedule> schedules = new ArrayList<>();
+        for (Bus bus : getAllBusesWithDetails()) {
+            for (Route route : bus.getRoutes()) {
+                schedules.addAll(route.getSchedules());
+            }
+        }
+        return schedules;
+    }
+}
