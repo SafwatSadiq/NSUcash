@@ -1,4 +1,4 @@
 package com.mindreader007.nsucash.controller;
 
-public class BookShopScreen {
+public class TicketScreen {
 }

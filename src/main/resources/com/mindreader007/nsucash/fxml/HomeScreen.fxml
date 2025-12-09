@@ -15,12 +15,12 @@
             <AnchorPane fx:id="menuArea" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
                   <Rectangle arcHeight="75.0" arcWidth="75.0" fill="#061742" height="336.0" layoutX="35.0" layoutY="42.0" stroke="#061742" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" width="857.0" />
-                  <Button layoutX="47.0" layoutY="421.0" mnemonicParsing="false" onAction="#bookshopButtonClicked" onMouseExited="#onHoverExitButton" onMouseMoved="#onHoverButton" prefHeight="96.0" prefWidth="231.0" style="-fx-background-radius: 30; -fx-background-color: #061742;" text="BookShop" textFill="#d1dbe4">
+                  <Button layoutX="47.0" layoutY="421.0" mnemonicParsing="false" onAction="#bookshopButtonClicked" onMouseExited="#onHoverExitButton" onMouseMoved="#onHoverButton" prefHeight="96.0" prefWidth="231.0" style="-fx-background-radius: 30; -fx-background-color: #061742;" text="Ticket" textFill="#d1dbe4">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="24.0" />
                      </font>
                      <graphic>
-                        <FontAwesomeIconView fill="#d1dbe4" glyphName="BOOK" selectionFill="#d1dbe4" />
+                        <FontAwesomeIconView fill="#d1dbe4" glyphName="TICKET" selectionFill="#d1dbe4" />
                      </graphic>
                   </Button>
                   <Button layoutX="348.0" layoutY="421.0" mnemonicParsing="false" onAction="#canteenButtonClicked" onMouseExited="#onHoverExitButton" onMouseMoved="#onHoverButton" prefHeight="96.0" prefWidth="231.0" style="-fx-background-radius: 30; -fx-background-color: #061742;" text="Canteen" textFill="#d1dbe4">

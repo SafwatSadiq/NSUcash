@@ -1,6 +1,5 @@
 package com.mindreader007.nsucash.controller;
 
-import com.mindreader007.nsucash.services.AccountsDAO;
 import com.mindreader007.nsucash.services.UserSession;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -58,7 +57,7 @@ public class MenuScreen implements Initializable {
     }
 
     public void bookshopButtonClicked(){
-        loadPage("/com/mindreader007/nsucash/fxml/BookShopScreen.fxml");
+        loadPage("/com/mindreader007/nsucash/fxml/TicketScreen.fxml");
     }
 
     public void canteenButtonClicked(){

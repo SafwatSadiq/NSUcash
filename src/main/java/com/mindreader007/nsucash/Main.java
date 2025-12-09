@@ -34,6 +34,7 @@ public class Main extends Application {
         primaryStage.setTitle("NSUCash");
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("image/NSUCash.jpg"))));
+        primaryStage.resizableProperty().setValue(false);
         primaryStage.show();
     }
 
