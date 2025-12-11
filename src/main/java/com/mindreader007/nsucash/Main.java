@@ -31,6 +31,7 @@ public class Main extends Application {
 
         Scene scene = new Scene(root);
 
+
         primaryStage.setTitle("NSUCash");
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("image/NSUCash.jpg"))));
