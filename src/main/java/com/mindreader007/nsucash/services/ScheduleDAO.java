@@ -29,5 +29,13 @@ public class ScheduleDAO {
         }
     }
 
+    public static void increaseSeatCount(int scheduleId) throws SQLException {
+        String sql = "UPDATE schedules SET available_seat = available_seat + 1 WHERE schedule_id = ? AND available_seat > 0";
+        try (Connection conn = Database.connect(); PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, scheduleId);
+            ps.executeUpdate();
+        }
+    }
+
 }
 

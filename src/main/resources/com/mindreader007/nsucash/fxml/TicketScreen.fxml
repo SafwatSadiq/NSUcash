@@ -11,7 +11,7 @@
    <children>
       <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#061742" height="428.0" layoutX="31.0" layoutY="52.0" stroke="#a3b6c756" strokeType="OUTSIDE" strokeWidth="3.0" width="864.0" />
       <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="63.0" layoutX="66.0" layoutY="82.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="200.0" />
-      <Label fx:id="ticketLabel" alignment="CENTER" layoutX="82.0" layoutY="87.0" prefHeight="53.0" prefWidth="169.0" text="Ticket">
+      <Label fx:id="ticketLabel" alignment="CENTER" layoutX="82.0" layoutY="87.0" prefHeight="53.0" prefWidth="169.0" text="TICKET">
          <font>
             <Font name="Arial Rounded MT Bold" size="24.0" />
          </font></Label>
@@ -23,7 +23,7 @@
             <Font name="Arial Rounded MT Bold" size="36.0" />
          </font>
       </Button>
-      <Button layoutX="516.0" layoutY="503.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="139.0" prefWidth="295.0" style="-fx-background-color: #061742; -fx-background-radius: 20;" text="Cancel" textFill="#d1dbe4">
+      <Button layoutX="516.0" layoutY="503.0" mnemonicParsing="false" onAction="#onCancelClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="139.0" prefWidth="295.0" style="-fx-background-color: #061742; -fx-background-radius: 20;" text="Cancel" textFill="#d1dbe4">
          <font>
             <Font name="Arial Rounded MT Bold" size="36.0" />
          </font>
