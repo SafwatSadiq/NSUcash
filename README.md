@@ -1,6 +1,11 @@
 # NSUCash
 
 ---
+
+<div align="center">
+  <img src="assets/NSUCash.png" alt="Login Page" width="200">
+</div>
+
 NSUCash is a Java-based application for banking simulation which was made for NSU students. We can give it another name which is Student Wallet System.
 This project was developed as a part of CSE215L course under the faculty Shah Mostafa Khaled(STL) to demonstrate core Java skills and real world application logic.
 
