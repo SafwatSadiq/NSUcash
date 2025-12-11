@@ -34,7 +34,7 @@ public class BookingDAO {
 
         String sql =
                 "SELECT b.booking_id, b.schedule_id, b.booking_time, b.stops, " +
-                        "s.stopTimes, r.direction, bs.busName " +
+                        "s.stop_times, r.direction, bs.bus_name, bs.bus_id " +
                         "FROM bookings b " +
                         "JOIN schedules s ON b.schedule_id = s.schedule_id " +
                         "JOIN routes r ON s.route_id = r.route_id " +
@@ -53,10 +53,11 @@ public class BookingDAO {
                         username,
                         rs.getInt("schedule_id"),
                         rs.getString("booking_time"),
-                        rs.getString("busName"),
+                        rs.getString("bus_name"),
                         rs.getString("direction"),
-                        rs.getString("stopTimes"),
-                        rs.getString("stops")
+                        rs.getString("stop_times"),
+                        rs.getString("stops"),
+                        rs.getInt("bus_id")
                 ));
             }
         }

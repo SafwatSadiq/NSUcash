@@ -18,12 +18,12 @@
       <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="139.0" layoutX="663.0" layoutY="82.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="200.0" />
       <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="63.0" layoutX="66.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="355.0" />
       <FontAwesomeIconView fill="#061742" glyphName="USER" layoutX="720.0" layoutY="194.0" size="120" text="" />
-      <Button layoutX="104.0" layoutY="503.0" mnemonicParsing="false" prefHeight="139.0" prefWidth="295.0" style="-fx-background-color: #061742; -fx-background-radius: 20;" text="Back" textFill="#d1dbe4">
+      <Button layoutX="104.0" layoutY="503.0" mnemonicParsing="false" onAction="#onBackClick" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="139.0" prefWidth="295.0" style="-fx-background-color: #061742; -fx-background-radius: 20;" text="Back" textFill="#d1dbe4">
          <font>
             <Font name="Arial Rounded MT Bold" size="36.0" />
          </font>
       </Button>
-      <Button layoutX="516.0" layoutY="503.0" mnemonicParsing="false" prefHeight="139.0" prefWidth="295.0" style="-fx-background-color: #061742; -fx-background-radius: 20;" text="Cancel" textFill="#d1dbe4">
+      <Button layoutX="516.0" layoutY="503.0" mnemonicParsing="false" onMouseEntered="#onHoverButton" onMouseExited="#onHoverExitButton" prefHeight="139.0" prefWidth="295.0" style="-fx-background-color: #061742; -fx-background-radius: 20;" text="Cancel" textFill="#d1dbe4">
          <font>
             <Font name="Arial Rounded MT Bold" size="36.0" />
          </font>

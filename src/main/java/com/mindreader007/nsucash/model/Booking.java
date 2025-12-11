@@ -9,9 +9,10 @@ public class Booking {
     private String direction;
     private String stopTimes;
     private String stops;
+    private int busId;
 
     public Booking(int bookingId, String username, int scheduleId, String bookingTime,
-                   String busName, String direction, String stopTimes, String stops) {
+                   String busName, String direction, String stopTimes, String stops, int busId) {
         this.bookingId = bookingId;
         this.username = username;
         this.scheduleId = scheduleId;
@@ -20,6 +21,7 @@ public class Booking {
         this.direction = direction;
         this.stopTimes = stopTimes;
         this.stops = stops;
+        this.busId = busId;
     }
 
 
@@ -53,6 +55,10 @@ public class Booking {
 
     public String getUsername() {
         return username;
+    }
+
+    public int getBusId() {
+        return busId;
     }
 }
 
