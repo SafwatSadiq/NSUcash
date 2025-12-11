@@ -1,6 +1,5 @@
 # NSUCash
 
----
 
 <div align="center">
   <img src="assets/NSUCash.png" alt="Login Page" width="200">
