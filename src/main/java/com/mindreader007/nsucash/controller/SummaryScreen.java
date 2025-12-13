@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Tooltip;
 
 import java.net.URL;
 import java.util.HashMap;
@@ -41,14 +42,34 @@ public class SummaryScreen implements Initializable {
         for (Map.Entry<String, Double> entry : postiveTotalsByType.entrySet()) {
             positiveData.add(new PieChart.Data(entry.getKey(), entry.getValue()));
         }
-        incomePieChart.setData(positiveData);
 
         ObservableList<PieChart.Data> negativeData = FXCollections.observableArrayList();
         for (Map.Entry<String, Double> entry : negativeTotalsByType.entrySet()) {
             negativeData.add(new PieChart.Data(entry.getKey(), entry.getValue()));
         }
 
-        expensePieChart.setData(negativeData);
-        expensePieChart.setLabelsVisible(true);
+        Platform.runLater(() -> {
+            incomePieChart.setData(positiveData);
+            expensePieChart.setData(negativeData);
+
+            addTooltips(incomePieChart);
+            addTooltips(expensePieChart);
+        });
     }
+
+    private void addTooltips(PieChart chart) {
+        for (PieChart.Data data : chart.getData()) {
+            if (data.getNode() != null) {
+                Tooltip tooltip = new Tooltip(
+                        data.getName() + " : " + String.format("%.2f BDT", data.getPieValue())
+                );
+                tooltip.setShowDelay(javafx.util.Duration.ZERO);
+                tooltip.setHideDelay(javafx.util.Duration.seconds(0.2));
+                Tooltip.install(data.getNode(), tooltip);
+            }
+        }
+        chart.setLabelsVisible(true);
+    }
+
+
 }
