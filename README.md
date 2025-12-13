@@ -14,9 +14,7 @@ This project was developed as a part of CSE215L course under the faculty Shah Mo
 3. [Technologies](#technologies)
 4. [Installation](#installation)
 5. [Usage](#usage)
-6. [Database / Data Model](#database--data-model)
-7. [Screenshots](#screenshots)
-8. [Contributing](#contributing)
+6. [Screenshots](#screenshots)
 
 ## About
 
@@ -68,5 +66,5 @@ Describe how a user should interact with the app:
 ![BusPage.png](assets/BusPage.png)  ![CalculatorPage.png](assets/CalculatorPage.png)
 
 ![TicketPage.png](assets/TicketPage.png)  ![TransferPage.png](assets/TransferPage.png)
-![SummaryScreen.png](assets/SummaryScreen.png)
+![SummaryScreen.png](assets/SummaryScreen.png) ![CanteenPage.png](assets/CanteenPage.png)
 ![CourseAdvisingPage.png](assets/CourseAdvisingPage.png)  ![TransactionPage.png](assets/TransactionPage.png) 
