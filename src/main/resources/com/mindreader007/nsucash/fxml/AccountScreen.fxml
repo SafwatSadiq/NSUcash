@@ -6,9 +6,6 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
@@ -16,45 +13,8 @@
    <children>
       <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#061742" height="678.0" layoutX="24.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="878.0" />
       <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="229.0" layoutX="41.0" layoutY="37.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="845.0" />
-      <Rectangle arcHeight="50.0" arcWidth="50.0" height="208.0" layoutX="69.0" layoutY="152.0" stroke="#061742" strokeType="INSIDE" strokeWidth="5.0" width="191.0">
-         <fill>
-            <LinearGradient endX="0.4976303317535545" endY="0.8246445497630333" startX="0.4976303317535546" startY="0.5165876777251186">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.0235294122248888" green="0.09019608050584793" blue="0.25882354378700256" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.8196078538894653" green="0.8588235378265381" blue="0.8941176533699036" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </fill></Rectangle>
-      <FontAwesomeIconView glyphName="USER" layoutX="111.0" layoutY="309.0" size="150">
-         <fill>
-            <LinearGradient endX="0.4976303317535545" endY="0.6824644549763034" startX="0.4976303317535546" startY="0.3175355450236968">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.8196078538894653" green="0.8588235378265381" blue="0.8941176533699036" />
-                     </color>
-                  </Stop>
-                  <Stop offset="0.006711409395973154">
-                     <color>
-                        <Color red="0.8196078538894653" green="0.8588235378265381" blue="0.8941176533699036" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.0235294122248888" green="0.09019608050584793" blue="0.25882354378700256" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </fill></FontAwesomeIconView>
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="208.0" layoutX="69.0" layoutY="152.0" stroke="#061742" strokeType="INSIDE" strokeWidth="5.0" width="191.0" />
+      <FontAwesomeIconView fill="#061742" glyphName="USER" layoutX="111.0" layoutY="309.0" size="150" />
       <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="67.0" layoutX="291.0" layoutY="345.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="345.0" />
       <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="67.0" layoutX="291.0" layoutY="435.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="208.0" />
       <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="67.0" layoutX="652.0" layoutY="345.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="234.0" />

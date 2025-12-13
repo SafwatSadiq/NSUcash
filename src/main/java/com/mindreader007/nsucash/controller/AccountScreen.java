@@ -21,7 +21,7 @@ public class AccountScreen implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         nameLabel.setText(UserSession.getUser().getName());
         deptLabel.setText(UserSession.getUser().getDepartment());
-        balanceLabel.setText("Tk " + String.valueOf(UserSession.getUser().getBalance()));
+        balanceLabel.setText("Tk " + UserSession.getUser().getBalance());
         usernameLabel.setText(UserSession.getUser().getUsername());
         phoneLabel.setText(UserSession.getUser().getPhoneNumber());
         ageLabel.setText(String.valueOf(UserSession.getUser().getAge()));
