@@ -9,16 +9,21 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AccountScreen implements Initializable {
-    @FXML
-    private Label accountLabel;
+    @FXML private Label nameLabel;
+    @FXML private Label deptLabel;
+    @FXML private Label balanceLabel;
+    @FXML private Label usernameLabel;
+    @FXML private Label phoneLabel;
+    @FXML private Label ageLabel;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        accountLabel.setText("Name: " + UserSession.getUser().getName() + "\n" +
-                "UserID: " +UserSession.getUser().getUserid() + "\n" +
-                "Username: " +UserSession.getUser().getUsername() + "\n" +
-                "Department: " +UserSession.getUser().getDepartment() + "\n" +
-                "PhoneNumber: " +UserSession.getUser().getPhoneNumber() + "\n");
+        nameLabel.setText(UserSession.getUser().getName());
+        deptLabel.setText(UserSession.getUser().getDepartment());
+        balanceLabel.setText("Tk " + String.valueOf(UserSession.getUser().getBalance()));
+        usernameLabel.setText(UserSession.getUser().getUsername());
+        phoneLabel.setText(UserSession.getUser().getPhoneNumber());
+        ageLabel.setText(String.valueOf(UserSession.getUser().getAge()));
     }
 }

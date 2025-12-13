@@ -1,15 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="contentArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="926.0" style="-fx-background-color: #d1dbe4;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mindreader007.nsucash.controller.AccountScreen">
-    <children>
-        <Label fx:id="accountLabel" alignment="CENTER" layoutX="58.0" layoutY="24.0" prefHeight="664.0" prefWidth="836.0" text="ACCOUNT">
-            <font>
-                <Font size="61.0" />
-            </font>
-        </Label>
-    </children>
+   <children>
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#061742" height="678.0" layoutX="24.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="878.0" />
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="229.0" layoutX="41.0" layoutY="37.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="845.0" />
+      <Rectangle arcHeight="50.0" arcWidth="50.0" height="208.0" layoutX="69.0" layoutY="152.0" stroke="#061742" strokeType="INSIDE" strokeWidth="5.0" width="191.0">
+         <fill>
+            <LinearGradient endX="0.4976303317535545" endY="0.8246445497630333" startX="0.4976303317535546" startY="0.5165876777251186">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.0235294122248888" green="0.09019608050584793" blue="0.25882354378700256" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8196078538894653" green="0.8588235378265381" blue="0.8941176533699036" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill></Rectangle>
+      <FontAwesomeIconView glyphName="USER" layoutX="111.0" layoutY="309.0" size="150">
+         <fill>
+            <LinearGradient endX="0.4976303317535545" endY="0.6824644549763034" startX="0.4976303317535546" startY="0.3175355450236968">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8196078538894653" green="0.8588235378265381" blue="0.8941176533699036" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.8196078538894653" green="0.8588235378265381" blue="0.8941176533699036" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.0235294122248888" green="0.09019608050584793" blue="0.25882354378700256" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill></FontAwesomeIconView>
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="67.0" layoutX="291.0" layoutY="345.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="345.0" />
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="67.0" layoutX="291.0" layoutY="435.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="208.0" />
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="67.0" layoutX="652.0" layoutY="345.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="234.0" />
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="293.0" layoutX="69.0" layoutY="378.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="191.0" />
+      <Label fx:id="nameLabel" alignment="CENTER" layoutX="308.0" layoutY="352.0" prefHeight="52.0" prefWidth="312.0" text="NAME">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font></Label>
+      <Label fx:id="deptLabel" alignment="CENTER" layoutX="664.0" layoutY="352.0" prefHeight="52.0" prefWidth="208.0" text="DEPT">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font></Label>
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="67.0" layoutX="519.0" layoutY="435.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="369.0" />
+      <Label fx:id="usernameLabel" alignment="CENTER" layoutX="527.0" layoutY="443.0" prefHeight="52.0" prefWidth="353.0" text="USERNAME">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font></Label>
+      <Label fx:id="balanceLabel" alignment="CENTER" layoutX="300.0" layoutY="443.0" prefHeight="52.0" prefWidth="191.0" text="BALANCE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font></Label>
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="67.0" layoutX="291.0" layoutY="525.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="397.0" />
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d1dbe4" height="67.0" layoutX="704.0" layoutY="525.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="180.0" />
+      <Label fx:id="phoneLabel" alignment="CENTER" layoutX="299.0" layoutY="533.0" prefHeight="52.0" prefWidth="382.0" text="PHONE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font></Label>
+      <Label fx:id="ageLabel" alignment="CENTER" layoutX="714.0" layoutY="533.0" prefHeight="52.0" prefWidth="161.0" text="AGE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font></Label>
+      <ToolBar layoutX="291.0" layoutY="619.0" prefHeight="52.0" prefWidth="591.0" style="-fx-background-radius: 20; -fx-background-color: #d1dbe4;">
+        <items>
+            <Pane layoutX="457.0" layoutY="10.0" prefHeight="42.0" prefWidth="8.0" />
+          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" stylesheets="@../css/ButtonAlt.css">
+               <graphic>
+                  <FontAwesomeIconView fill="#d1dbe4" glyphName="INSTAGRAM" size="24" />
+               </graphic>
+            </Button>
+            <Pane prefHeight="42.0" prefWidth="8.0" />
+            <Button layoutX="10.0" layoutY="11.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" stylesheets="@../css/ButtonAlt.css">
+               <graphic>
+                  <FontAwesomeIconView fill="#d1dbe4" glyphName="FACEBOOK_OFFICIAL" size="24" />
+               </graphic>
+            </Button>
+            <Pane layoutX="112.0" layoutY="10.0" prefHeight="42.0" prefWidth="8.0" />
+            <Button layoutX="191.0" layoutY="11.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" stylesheets="@../css/ButtonAlt.css">
+               <graphic>
+                  <FontAwesomeIconView fill="#d1dbe4" glyphName="TELEGRAM" size="24" />
+               </graphic>
+            </Button>
+            <Pane layoutX="227.0" layoutY="10.0" prefHeight="42.0" prefWidth="8.0" />
+            <Button layoutX="261.0" layoutY="11.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" stylesheets="@../css/ButtonAlt.css">
+               <graphic>
+                  <FontAwesomeIconView fill="#d1dbe4" glyphName="ENVELOPE" size="24" />
+               </graphic>
+            </Button>
+            <Pane layoutX="342.0" layoutY="10.0" prefHeight="42.0" prefWidth="8.0" />
+            <Button layoutX="374.0" layoutY="11.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" stylesheets="@../css/ButtonAlt.css">
+               <graphic>
+                  <FontAwesomeIconView fill="#d1dbe4" glyphName="LINKEDIN" size="24" />
+               </graphic>
+            </Button>
+        </items>
+      </ToolBar>
+      <Label layoutX="419.0" layoutY="290.0" text="ACCOUNT INFORMATION" textFill="#d1dbe4">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>
