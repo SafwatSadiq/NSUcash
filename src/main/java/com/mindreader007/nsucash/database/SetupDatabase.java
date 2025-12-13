@@ -78,6 +78,7 @@ public class SetupDatabase {
             stmt.execute(routes);
             stmt.execute(route_stops);
             stmt.execute(schedules);
+            stmt.execute(bookings);
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -5,13 +5,15 @@ import com.mindreader007.nsucash.model.AdvisingStudent;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class CourseAdvisingService {
     private final List<Course> catalog = new ArrayList<>();
-    // store selections keyed by username
     private final Map<String, AdvisingStudent> selections = new HashMap<>();
     public static final int MANDATORY_FEE = 10000;
 
@@ -61,36 +63,32 @@ public class CourseAdvisingService {
         return calculateTuitionForUser(username) + MANDATORY_FEE;
     }
 
-    /**
-     * Confirm payment: logs transaction and writes a receipt.
-     * Returns receipt filename or null if something failed.
-     */
     public String confirmPayment(String username, String displayName) {
         int total = calculateTotalAmountForUser(username);
-        // Log transaction in DB
-        TransactionsDAO.addTransaction(username, "advising", total);
+        TransactionsDAO.addTransaction(username, "advising", -total);
 
-        // deduct from UserSession's balance if present
         try {
             com.mindreader007.nsucash.model.User u = UserSession.getUser();
             if (u != null && u.getUsername().equals(username)) {
-                double newBal = u.getBalance() - total;
-                u.setBalance(newBal);
+                AccountsDAO.decrementBalance(u.getUsername(), total);
                 UserSession.updateUser(u);
-                // To persist balance in DB you'd need a UserDAO; not included here.
             }
         } catch (Exception e) {
             // ignore if we cannot update balance here
         }
 
-        // write receipt (similar to your Payment.generateReceiptAndSave)
         try {
             AdvisingStudent st = selections.get(username);
             if (st == null) return null;
 
             String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
             String filename = "receipt_" + username + "_" + timestamp + ".txt";
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+
+            Path receiptDir = Paths.get("data", "receipts");
+            Files.createDirectories(receiptDir);
+
+            Path receiptFile = receiptDir.resolve(filename);
+            try (BufferedWriter writer = Files.newBufferedWriter(receiptFile)) {
                 writer.write(center("NSUcash - Course Advising Payment Receipt", 60)); writer.newLine();
                 writer.write("-----------------------------------------------"); writer.newLine();
                 writer.write("Student Name: " + displayName); writer.newLine();
