@@ -19,7 +19,7 @@ public class AdvisingScreen {
     @FXML private TableColumn<Course, Integer> colCredits;
     @FXML private TableColumn<Course, Integer> colFee;
 
-    @FXML private ListView<String> lvSelected; // show course codes + names
+    @FXML private ListView<String> lvSelected;
     @FXML private Label lblTotal;
     @FXML private Button btnAdd;
     @FXML private Button btnRemove;
