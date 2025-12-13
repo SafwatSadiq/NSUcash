@@ -20,4 +20,12 @@ public class UserSession {
     public static void updateUser(User user){
         loggedInUser = user;
     }
+
+    public static String getLoggedInUsername() {
+        if (loggedInUser != null) {
+            return loggedInUser.getUsername();
+        }
+        return null;
+    }
+
 }
