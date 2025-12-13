@@ -50,6 +50,7 @@ public class AccountsDAO {
         catch (SQLException e){
             e.printStackTrace();
         }
+        UserSession.updateUser(AccountsDAO.getUser(UserSession.getUser().getUsername()));
     }
 
     public static void decrementBalance(String username, double amount){
@@ -65,5 +66,6 @@ public class AccountsDAO {
         catch (SQLException e){
             e.printStackTrace();
         }
+        UserSession.updateUser(AccountsDAO.getUser(UserSession.getUser().getUsername()));
     }
 }

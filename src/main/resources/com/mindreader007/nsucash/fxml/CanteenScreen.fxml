@@ -59,7 +59,7 @@
                               </TableView>
                               <HBox spacing="8">
                                  <children>
-                                    <Button fx:id="btnAdd" stylesheets="@../css/Button.css" text="Add Selected" />
+                                    <Button fx:id="btnAdd" onAction="#addSelectedClicked" stylesheets="@../css/Button.css" text="Add Selected" />
                                  </children>
                               </HBox>
                            </children>
@@ -87,13 +87,13 @@
                                        </font>
                                     </Label>
                                     <Pane HBox.hgrow="ALWAYS" />
-                                    <Button fx:id="btnRemove" stylesheets="@../css/Button.css" text="Remove Selected" />
+                                    <Button fx:id="btnRemove" onAction="#addRemoveClicked" stylesheets="@../css/Button.css" text="Remove Selected" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="461.0" spacing="8">
                                  <children>
                                     <Pane HBox.hgrow="ALWAYS" />
-                                    <Button fx:id="btnPay" stylesheets="@../css/Button.css" text="Proceed to Pay" />
+                                    <Button fx:id="btnPay" onAction="#onPaymentClicked" stylesheets="@../css/Button.css" text="Proceed to Pay" />
                                  </children>
                               </HBox>
                            </children>
