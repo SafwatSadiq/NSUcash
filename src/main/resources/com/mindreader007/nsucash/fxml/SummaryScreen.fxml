@@ -8,10 +8,27 @@
 
 <AnchorPane fx:id="contentArea" prefHeight="720.0" prefWidth="926.0" style="-fx-background-color: #d1dbe4;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mindreader007.nsucash.controller.SummaryScreen">
     <children>
-      <PieChart fx:id="pieChart" layoutX="134.0" layoutY="97.0" prefHeight="526.0" prefWidth="658.0" />
-      <Label layoutX="268.0" layoutY="71.0" style="-fx-background-color: #061742; -fx-background-radius: 20;" text=" Expense Distribution " textFill="#d1dbe4">
+      <PieChart fx:id="expensePieChart" layoutX="19.0" layoutY="257.0" prefHeight="354.0" prefWidth="443.0" />
+      <Label layoutX="45.0" layoutY="177.0" style="-fx-background-color: #061742; -fx-background-radius: 20;" text=" Expense Distribution " textFill="#d1dbe4">
          <font>
             <Font name="Arial Rounded MT Bold" size="36.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label layoutX="510.0" layoutY="177.0" style="-fx-background-color: #061742; -fx-background-radius: 20;" text=" Income Distribution " textFill="#d1dbe4">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="36.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <PieChart fx:id="incomePieChart" layoutX="474.0" layoutY="257.0" prefHeight="354.0" prefWidth="443.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="268.0" layoutY="59.0" prefHeight="53.0" prefWidth="391.0" style="-fx-background-color: #061742; -fx-background-radius: 20;" text="SUMMARY" textFill="#d1dbe4">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="64.0" />
          </font>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

@@ -18,26 +18,37 @@ import java.util.ResourceBundle;
 
 public class SummaryScreen implements Initializable {
     @FXML
-    private PieChart pieChart;
+    private PieChart expensePieChart;
+    @FXML
+    private PieChart incomePieChart;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         List<Transaction> transactions = TransactionsDAO.getTransactionsByUser(UserSession.getUser().getUsername());
 
-        Map<String, Double> totalsByType = new HashMap<>();
+        Map<String, Double> negativeTotalsByType = new HashMap<>();
+        Map<String, Double> postiveTotalsByType = new HashMap<>();
         for (Transaction t : transactions) {
-            totalsByType.merge(t.getType(), t.getValue(), Double::sum);
+            double value = t.getValue();
+            if (value < 0) {
+                negativeTotalsByType.merge(t.getType(), Math.abs(t.getValue()), Double::sum);
+            } else if (value > 0) {
+                postiveTotalsByType.merge(t.getType(), Math.abs(t.getValue()), Double::sum);
+            }
         }
 
-        ObservableList<PieChart.Data> pieData = FXCollections.observableArrayList();
-        for (Map.Entry<String, Double> entry : totalsByType.entrySet()) {
-            pieData.add(new PieChart.Data(entry.getKey(), entry.getValue()));
+        ObservableList<PieChart.Data> positiveData = FXCollections.observableArrayList();
+        for (Map.Entry<String, Double> entry : postiveTotalsByType.entrySet()) {
+            positiveData.add(new PieChart.Data(entry.getKey(), entry.getValue()));
+        }
+        incomePieChart.setData(positiveData);
+
+        ObservableList<PieChart.Data> negativeData = FXCollections.observableArrayList();
+        for (Map.Entry<String, Double> entry : negativeTotalsByType.entrySet()) {
+            negativeData.add(new PieChart.Data(entry.getKey(), entry.getValue()));
         }
 
-        pieChart.setData(pieData);
-        pieChart.setTitle("Expense Distribution");
-        pieChart.setLabelsVisible(true);
+        expensePieChart.setData(negativeData);
+        expensePieChart.setLabelsVisible(true);
     }
-
-
 }
