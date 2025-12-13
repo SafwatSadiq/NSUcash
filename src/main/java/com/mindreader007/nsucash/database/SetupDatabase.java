@@ -67,6 +67,12 @@ public class SetupDatabase {
                 "FOREIGN KEY(schedule_id) REFERENCES schedules(schedule_id)" +
                 ");";
 
+        String foods = "CREATE TABLE IF NOT EXISTS foods (" +
+                "food_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "food_name VARCHAR(100) NOT NULL UNIQUE," +
+                "price DOUBLE NOT NULL" +
+                ");";
+
         try (Connection conn = Database.connect();
              var stmt = conn.createStatement()) {
 
@@ -79,6 +85,7 @@ public class SetupDatabase {
             stmt.execute(route_stops);
             stmt.execute(schedules);
             stmt.execute(bookings);
+            stmt.execute(foods);
 
         } catch (Exception e) {
             e.printStackTrace();
