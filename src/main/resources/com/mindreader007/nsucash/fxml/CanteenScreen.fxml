@@ -47,7 +47,7 @@
                                     <Insets left="5.0" />
                                  </padding>
                               </Label>
-                              <TableView fx:id="availableFoodListTable" prefHeight="520" prefWidth="520" style="-fx-background-radius: 0 0 20 20;">
+                              <TableView fx:id="availableFoodListTable" focusTraversable="false" prefHeight="520" prefWidth="520" style="-fx-background-radius: 0 0 20 20;">
                                  <columns>
                                     <TableColumn fx:id="idColumn" prefWidth="95.0" text="Id" />
                                     <TableColumn fx:id="nameColumn" prefWidth="292.0" text="Name" />
@@ -78,7 +78,7 @@
                                     <Insets left="5.0" />
                                  </padding>
                               </Label>
-                              <ListView fx:id="selectedItemListView" prefHeight="420" style="-fx-background-radius: 20;" />
+                              <ListView fx:id="selectedItemListView" focusTraversable="false" prefHeight="420" style="-fx-background-radius: 20;" />
                               <HBox spacing="8">
                                  <children>
                                     <Label fx:id="totalAmountLabel" text="Total: 0 BDT" textFill="#061742">
