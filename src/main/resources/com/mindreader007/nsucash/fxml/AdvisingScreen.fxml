@@ -1,15 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<AnchorPane fx:id="contentArea" prefHeight="720.0" prefWidth="926.0"
+            style="-fx-background-color: #d1dbe4;"
+            xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.mindreader007.nsucash.controller.AdvisingScreen">
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+    <children>
+        <BorderPane prefHeight="680" prefWidth="900" layoutX="10" layoutY="10" style="-fx-background-color: transparent;">
+            <top>
+                <ToolBar>
+                    <Label text="Course Advising" style="-fx-font-size: 22px; -fx-font-weight: bold;" />
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <Label text="Note: Mandatory fee 10000 BDT"/>
+                </ToolBar>
+            </top>
 
-<AnchorPane fx:id="contentArea" prefHeight="720.0" prefWidth="926.0" style="-fx-background-color: #d1dbe4;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mindreader007.nsucash.controller.AdvisingScreen">
-   <children>
-      <Label layoutX="282.0" layoutY="290.0" text="Advising">
-         <font>
-            <Font size="96.0" />
-         </font>
-      </Label>
-   </children>
+            <center>
+                <SplitPane dividerPositions="0.6" orientation="HORIZONTAL">
+                    <!-- Left: Catalog -->
+                    <AnchorPane>
+                        <children>
+                            <VBox spacing="8" AnchorPane.topAnchor="8" AnchorPane.bottomAnchor="8" AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="8">
+                                <Label text="Available Courses"/>
+                                <TableView fx:id="tblAvailable" prefHeight="520" prefWidth="520">
+                                    <columns>
+                                        <TableColumn fx:id="colCode" text="Code" prefWidth="90"/>
+                                        <TableColumn fx:id="colName" text="Title" prefWidth="260"/>
+                                        <TableColumn fx:id="colCredits" text="Cr" prefWidth="60"/>
+                                        <TableColumn fx:id="colFee" text="Fee" prefWidth="110"/>
+                                    </columns>
+                                </TableView>
+                                <HBox spacing="8">
+                                    <Button fx:id="btnAdd" text="Add Selected" onAction="#onAdd"/>
+                                </HBox>
+                            </VBox>
+                        </children>
+                    </AnchorPane>
+
+                    <!-- Right: Selected & Payment -->
+                    <AnchorPane>
+                        <children>
+                            <VBox spacing="8" AnchorPane.topAnchor="8" AnchorPane.bottomAnchor="8" AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="8">
+                                <Label text="Selected Courses"/>
+                                <ListView fx:id="lvSelected" prefHeight="420" />
+                                <HBox spacing="8">
+                                    <Label fx:id="lblTotal" text="Total: 0 BDT" />
+                                    <Pane HBox.hgrow="ALWAYS"/>
+                                    <Button fx:id="btnRemove" text="Remove Selected" onAction="#onRemove"/>
+                                    <Button fx:id="btnPay" text="Proceed to Pay" onAction="#onPay"/>
+                                </HBox>
+                            </VBox>
+                        </children>
+                    </AnchorPane>
+                </SplitPane>
+            </center>
+        </BorderPane>
+    </children>
 </AnchorPane>
+
