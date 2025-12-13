@@ -1,7 +1,6 @@
 package com.mindreader007.nsucash.controller;
 
 import com.mindreader007.nsucash.model.Food;
-import com.mindreader007.nsucash.model.User;
 import com.mindreader007.nsucash.services.AccountsDAO;
 import com.mindreader007.nsucash.services.FoodDAO;
 import com.mindreader007.nsucash.services.TransactionsDAO;
@@ -26,9 +25,6 @@ public class CanteenScreen {
 
     @FXML private ListView<String> selectedItemListView;
     @FXML private Label totalAmountLabel;
-    @FXML private Button btnAdd;
-    @FXML private Button btnRemove;
-    @FXML private Button btnPay;
 
     private double totalAmount;
     private final ObservableList<String> selectedFoods = FXCollections.observableArrayList();
@@ -112,15 +108,8 @@ public class CanteenScreen {
 
     }
 
-
-
     private void showAlert(Alert.AlertType t, String msg) {
         Alert a = new Alert(t, msg);
         a.showAndWait();
-    }
-
-    private void refreshSelected() {
-        selectedItemListView.getItems().clear();
-        totalAmountLabel.setText("Total: " + totalAmount + " BDT");
     }
 }
