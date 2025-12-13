@@ -68,4 +68,5 @@ Describe how a user should interact with the app:
 ![BusPage.png](assets/BusPage.png)  ![CalculatorPage.png](assets/CalculatorPage.png)
 
 ![TicketPage.png](assets/TicketPage.png)  ![TransferPage.png](assets/TransferPage.png)
+![SummaryScreen.png](assets/SummaryScreen.png)
 ![CourseAdvisingPage.png](assets/CourseAdvisingPage.png)  ![TransactionPage.png](assets/TransactionPage.png) 
