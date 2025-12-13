@@ -67,4 +67,5 @@ Describe how a user should interact with the app:
 
 ![TicketPage.png](assets/TicketPage.png)  ![TransferPage.png](assets/TransferPage.png)
 ![SummaryScreen.png](assets/SummaryScreen.png) ![CanteenPage.png](assets/CanteenPage.png)
+![AccountPage.png](assets/AccountPage.png)
 ![CourseAdvisingPage.png](assets/CourseAdvisingPage.png)  ![TransactionPage.png](assets/TransactionPage.png) 
