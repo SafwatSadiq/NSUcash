@@ -31,7 +31,6 @@ public class TransactionsScreen {
 
     @FXML
     public void initialize() {
-        // connect table columns to Transaction model getters
         colId.setCellValueFactory(new PropertyValueFactory<>("transaction_id"));
         colType.setCellValueFactory(new PropertyValueFactory<>("type"));
         colValue.setCellValueFactory(new PropertyValueFactory<>("value"));
@@ -41,22 +40,12 @@ public class TransactionsScreen {
     }
 
     private void loadTransactions() {
-        // get logged-in user safely
         if (UserSession.getUser() == null) return;
         String username = UserSession.getUser().getUsername();
 
         List<Transaction> list = TransactionsDAO.getTransactionsByUser(username);
 
-        // OPTIONAL: filter only advising and bus transactions
-        List<Transaction> filtered = list.stream()
-                .filter(t -> t.getType().equalsIgnoreCase("advising") || t.getType().equalsIgnoreCase("bus"))
-                .collect(Collectors.toList());
-
-        // set items in the table
-        transactionsTable.setItems(FXCollections.observableArrayList(filtered));
-
-        // DEBUG: print transactions to console
-        System.out.println("Loaded transactions for " + username + ": " + filtered.size());
+        transactionsTable.setItems(FXCollections.observableArrayList(list));
     }
 }
 

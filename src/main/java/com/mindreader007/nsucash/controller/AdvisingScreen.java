@@ -31,7 +31,6 @@ public class AdvisingScreen {
 
     @FXML
     public void initialize() {
-        // bind columns
         colCode.setCellValueFactory(c -> new ReadOnlyStringWrapper(c.getValue().getCode()));
         colName.setCellValueFactory(c -> new ReadOnlyStringWrapper(c.getValue().getName()));
         colCredits.setCellValueFactory(c -> new ReadOnlyObjectWrapper<>(c.getValue().getCredits()));
@@ -81,7 +80,6 @@ public class AdvisingScreen {
             showAlert(AlertType.INFORMATION, "Select a course in the selected list to remove.");
             return;
         }
-        // selected list item starts with code
         String code = sel.split(" - ", 2)[0].trim();
         service.removeCourseForUser(username(), code);
         refreshSelected();

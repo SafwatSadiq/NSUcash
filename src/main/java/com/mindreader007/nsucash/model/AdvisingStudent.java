@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AdvisingStudent {
-    private final String username; // maps to app's User.getUsername()
-    private final String name;     // optional copy of display name
+    private final String username;
+    private final String name;
     private final List<Course> selectedCourses = new ArrayList<>();
 
     public AdvisingStudent(String username, String name) {

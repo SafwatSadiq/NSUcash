@@ -10,7 +10,7 @@ module com.mindreader007.nsucash {
     requires java.sql;
     requires javafx.base;
 
-    opens com.mindreader007.nsucash to javafx.fxml;
+    opens com.mindreader007.nsucash.model to javafx.base;
     opens com.mindreader007.nsucash.controller to javafx.fxml;
     exports com.mindreader007.nsucash;
 }
