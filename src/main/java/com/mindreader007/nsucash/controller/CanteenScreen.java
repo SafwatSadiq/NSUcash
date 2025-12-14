@@ -114,6 +114,7 @@ public class CanteenScreen {
     private void showAlert(Alert.AlertType t, String msg) {
         Alert a = new Alert(t, msg);
         setAlertIcon(a);
+        setAlertCSS(a);
         a.showAndWait();
     }
 
@@ -125,6 +126,12 @@ public class CanteenScreen {
                                 getClass().getResourceAsStream("/com/mindreader007/nsucash/image/NSUCash.png")
                         )
                 )
+        );
+    }
+
+    private void setAlertCSS(Alert alert) {
+        alert.getDialogPane().getStylesheets().add(
+                getClass().getResource("/com/mindreader007/nsucash/css/Alert.css").toExternalForm()
         );
     }
 }

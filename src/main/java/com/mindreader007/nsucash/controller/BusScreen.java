@@ -118,6 +118,7 @@ public class BusScreen{
             alert.setHeaderText(null);
             alert.setContentText("Please select a bus to book!");
             setAlertIcon(alert);
+            setAlertCSS(alert);
             alert.showAndWait();
             return;
         }
@@ -128,6 +129,7 @@ public class BusScreen{
             alert.setHeaderText(null);
             alert.setContentText("Sorry All Seats For This Bus Has Already Been Booked");
             setAlertIcon(alert);
+            setAlertCSS(alert);
             alert.showAndWait();
             return;
         }
@@ -138,6 +140,7 @@ public class BusScreen{
             alert.setHeaderText(null);
             alert.setContentText("You Need To Have At Least 200 Taka In Your Account");
             setAlertIcon(alert);
+            setAlertCSS(alert);
             alert.showAndWait();
             return;
         }
@@ -148,6 +151,7 @@ public class BusScreen{
             alert.setHeaderText(null);
             alert.setContentText("Cancel Your Previous Booking Before Booking Again");
             setAlertIcon(alert);
+            setAlertCSS(alert);
             alert.showAndWait();
             return;
         }
@@ -172,6 +176,7 @@ public class BusScreen{
                 "\nStop Times: " + selectedSchedule.getStopTimes() +
                 "\nStops: " + stopsString);
         setAlertIcon(alert);
+        setAlertCSS(alert);
         alert.showAndWait();
 
         TransactionsDAO.addTransaction(UserSession.getUser().getUsername(), "bus", -TicketPrice);
@@ -207,6 +212,12 @@ public class BusScreen{
                                 getClass().getResourceAsStream("/com/mindreader007/nsucash/image/NSUCash.png")
                         )
                 )
+        );
+    }
+
+    private void setAlertCSS(Alert alert) {
+        alert.getDialogPane().getStylesheets().add(
+                getClass().getResource("/com/mindreader007/nsucash/css/Alert.css").toExternalForm()
         );
     }
 }

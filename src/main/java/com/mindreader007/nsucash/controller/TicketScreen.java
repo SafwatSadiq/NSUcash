@@ -89,6 +89,7 @@ public class TicketScreen implements Initializable {
             error.setHeaderText(null);
             error.setContentText("Book a ticket first!");
             setAlertIcon(error);
+            setAlertCSS(error);
             error.showAndWait();
             return;
         }
@@ -99,6 +100,7 @@ public class TicketScreen implements Initializable {
         confirmAlert.setHeaderText("Are you sure you want to cancel this booking?");
         confirmAlert.setContentText("This action cannot be undone.");
         setAlertIcon(confirmAlert);
+        setAlertCSS(confirmAlert);
 
         Optional<ButtonType> result = confirmAlert.showAndWait();
 
@@ -122,6 +124,7 @@ public class TicketScreen implements Initializable {
                 success.setHeaderText(null);
                 success.setContentText("Your booking has been cancelled.");
                 setAlertIcon(success);
+                setAlertCSS(success);
                 success.showAndWait();
                 updateLabels();
 
@@ -131,6 +134,7 @@ public class TicketScreen implements Initializable {
                 error.setHeaderText(null);
                 error.setContentText("The password you entered is incorrect.");
                 setAlertIcon(error);
+                setAlertCSS(error);
                 error.showAndWait();
             }
         }
@@ -190,6 +194,7 @@ public class TicketScreen implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("Please first book a bus to view ticket");
             setAlertIcon(alert);
+            setAlertCSS(alert);
             alert.showAndWait();
         }
         usernameLabel.setText(UserSession.getUser().getName());
@@ -204,6 +209,12 @@ public class TicketScreen implements Initializable {
                                 getClass().getResourceAsStream("/com/mindreader007/nsucash/image/NSUCash.png")
                         )
                 )
+        );
+    }
+
+    private void setAlertCSS(Alert alert) {
+        alert.getDialogPane().getStylesheets().add(
+                getClass().getResource("/com/mindreader007/nsucash/css/Alert.css").toExternalForm()
         );
     }
 }

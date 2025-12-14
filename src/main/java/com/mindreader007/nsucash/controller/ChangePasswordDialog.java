@@ -66,6 +66,7 @@ public class ChangePasswordDialog {
         alert.setHeaderText(null);
         alert.setContentText(message);
         setAlertIcon(alert);
+        setAlertCSS(alert);
         alert.showAndWait();
     }
 
@@ -74,6 +75,7 @@ public class ChangePasswordDialog {
         alert.setHeaderText(null);
         alert.setContentText(message);
         setAlertIcon(alert);
+        setAlertCSS(alert);
         alert.showAndWait();
     }
 
@@ -95,6 +97,12 @@ public class ChangePasswordDialog {
                                 getClass().getResourceAsStream("/com/mindreader007/nsucash/image/NSUCash.png")
                         )
                 )
+        );
+    }
+
+    private void setAlertCSS(Alert alert) {
+        alert.getDialogPane().getStylesheets().add(
+                getClass().getResource("/com/mindreader007/nsucash/css/Alert.css").toExternalForm()
         );
     }
 }
