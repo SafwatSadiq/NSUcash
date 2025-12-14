@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -17,6 +18,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -86,6 +88,7 @@ public class TicketScreen implements Initializable {
             error.setTitle("No Booking Found");
             error.setHeaderText(null);
             error.setContentText("Book a ticket first!");
+            setAlertIcon(error);
             error.showAndWait();
             return;
         }
@@ -95,6 +98,7 @@ public class TicketScreen implements Initializable {
         confirmAlert.setTitle("Cancel Booking");
         confirmAlert.setHeaderText("Are you sure you want to cancel this booking?");
         confirmAlert.setContentText("This action cannot be undone.");
+        setAlertIcon(confirmAlert);
 
         Optional<ButtonType> result = confirmAlert.showAndWait();
 
@@ -117,6 +121,7 @@ public class TicketScreen implements Initializable {
                 success.setTitle("Success");
                 success.setHeaderText(null);
                 success.setContentText("Your booking has been cancelled.");
+                setAlertIcon(success);
                 success.showAndWait();
                 updateLabels();
 
@@ -125,6 +130,7 @@ public class TicketScreen implements Initializable {
                 error.setTitle("Wrong Password");
                 error.setHeaderText(null);
                 error.setContentText("The password you entered is incorrect.");
+                setAlertIcon(error);
                 error.showAndWait();
             }
         }
@@ -183,9 +189,21 @@ public class TicketScreen implements Initializable {
             alert.setTitle("No Booking Exists");
             alert.setHeaderText(null);
             alert.setContentText("Please first book a bus to view ticket");
+            setAlertIcon(alert);
             alert.showAndWait();
         }
         usernameLabel.setText(UserSession.getUser().getName());
         userIdLabel.setText(String.valueOf(UserSession.getUser().getUserid()));
+    }
+
+    private void setAlertIcon(Alert alert){
+        Stage alertStage = (Stage) alert.getDialogPane().getScene().getWindow();
+        alertStage.getIcons().add(
+                new Image(
+                        Objects.requireNonNull(
+                                getClass().getResourceAsStream("/com/mindreader007/nsucash/image/NSUCash.png")
+                        )
+                )
+        );
     }
 }

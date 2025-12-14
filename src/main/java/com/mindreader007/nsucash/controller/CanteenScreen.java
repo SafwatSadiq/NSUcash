@@ -12,9 +12,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Objects;
 
 public class CanteenScreen {
     @FXML
@@ -110,6 +113,18 @@ public class CanteenScreen {
 
     private void showAlert(Alert.AlertType t, String msg) {
         Alert a = new Alert(t, msg);
+        setAlertIcon(a);
         a.showAndWait();
+    }
+
+    private void setAlertIcon(Alert alert){
+        Stage alertStage = (Stage) alert.getDialogPane().getScene().getWindow();
+        alertStage.getIcons().add(
+                new Image(
+                        Objects.requireNonNull(
+                                getClass().getResourceAsStream("/com/mindreader007/nsucash/image/NSUCash.png")
+                        )
+                )
+        );
     }
 }

@@ -7,10 +7,13 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Objects;
 
 public class BusScreen{
     private String onHoverStyle = "-fx-background-color: #a3b7ca; -fx-background-radius: 20; -fx-text-fill: #061742;";
@@ -114,6 +117,7 @@ public class BusScreen{
             alert.setTitle("No Selection");
             alert.setHeaderText(null);
             alert.setContentText("Please select a bus to book!");
+            setAlertIcon(alert);
             alert.showAndWait();
             return;
         }
@@ -123,6 +127,7 @@ public class BusScreen{
             alert.setTitle("Seat Not Available ");
             alert.setHeaderText(null);
             alert.setContentText("Sorry All Seats For This Bus Has Already Been Booked");
+            setAlertIcon(alert);
             alert.showAndWait();
             return;
         }
@@ -132,6 +137,7 @@ public class BusScreen{
             alert.setTitle("InSufficient Balance");
             alert.setHeaderText(null);
             alert.setContentText("You Need To Have At Least 200 Taka In Your Account");
+            setAlertIcon(alert);
             alert.showAndWait();
             return;
         }
@@ -141,6 +147,7 @@ public class BusScreen{
             alert.setTitle("Previous Booking Exists");
             alert.setHeaderText(null);
             alert.setContentText("Cancel Your Previous Booking Before Booking Again");
+            setAlertIcon(alert);
             alert.showAndWait();
             return;
         }
@@ -164,6 +171,7 @@ public class BusScreen{
                 "\nBooking Bus: " + selectedSchedule.getRoute().getBus().getBusName() +
                 "\nStop Times: " + selectedSchedule.getStopTimes() +
                 "\nStops: " + stopsString);
+        setAlertIcon(alert);
         alert.showAndWait();
 
         TransactionsDAO.addTransaction(UserSession.getUser().getUsername(), "bus", -TicketPrice);
@@ -189,5 +197,16 @@ public class BusScreen{
 
     private boolean checkIfSeatAvailable(Schedule selectedSchedule){
         return selectedSchedule.getAvailableSeat() > 0;
+    }
+
+    private void setAlertIcon(Alert alert){
+        Stage alertStage = (Stage) alert.getDialogPane().getScene().getWindow();
+        alertStage.getIcons().add(
+                new Image(
+                        Objects.requireNonNull(
+                                getClass().getResourceAsStream("/com/mindreader007/nsucash/image/NSUCash.png")
+                        )
+                )
+        );
     }
 }

@@ -5,7 +5,10 @@ import com.mindreader007.nsucash.services.UserSession;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import java.util.Objects;
 
 public class ChangePasswordDialog {
     @FXML private PasswordField currentPassword;
@@ -62,6 +65,7 @@ public class ChangePasswordDialog {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setHeaderText(null);
         alert.setContentText(message);
+        setAlertIcon(alert);
         alert.showAndWait();
     }
 
@@ -69,6 +73,7 @@ public class ChangePasswordDialog {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText(null);
         alert.setContentText(message);
+        setAlertIcon(alert);
         alert.showAndWait();
     }
 
@@ -80,5 +85,16 @@ public class ChangePasswordDialog {
     @FXML
     private void moveToConfirmPassword(){
         confirmPassword.requestFocus();
+    }
+
+    private void setAlertIcon(Alert alert){
+        Stage alertStage = (Stage) alert.getDialogPane().getScene().getWindow();
+        alertStage.getIcons().add(
+                new Image(
+                        Objects.requireNonNull(
+                                getClass().getResourceAsStream("/com/mindreader007/nsucash/image/NSUCash.png")
+                        )
+                )
+        );
     }
 }

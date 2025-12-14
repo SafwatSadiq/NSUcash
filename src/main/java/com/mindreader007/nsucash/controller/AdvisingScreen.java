@@ -10,6 +10,10 @@ import javafx.collections.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
+
+import java.util.Objects;
 
 public class AdvisingScreen {
 
@@ -110,6 +114,18 @@ public class AdvisingScreen {
 
     private void showAlert(AlertType t, String msg) {
         Alert a = new Alert(t, msg);
+        setAlertIcon(a);
         a.showAndWait();
+    }
+
+    private void setAlertIcon(Alert alert){
+        Stage alertStage = (Stage) alert.getDialogPane().getScene().getWindow();
+        alertStage.getIcons().add(
+                new Image(
+                        Objects.requireNonNull(
+                                getClass().getResourceAsStream("/com/mindreader007/nsucash/image/NSUCash.png")
+                        )
+                )
+        );
     }
 }
