@@ -1,6 +1,7 @@
 package com.mindreader007.nsucash.controller;
 
 import com.mindreader007.nsucash.model.User;
+import com.mindreader007.nsucash.services.UserDAO;
 import com.mindreader007.nsucash.services.UserSession;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,9 +10,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -103,5 +106,36 @@ public class AccountScreen implements Initializable {
         this.mainScreen = mainScreen;
     }
 
+    @FXML
+    private void onChangePasswordClicked() {
+        try {
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/com/mindreader007/nsucash/fxml/ChangePasswordDialog.fxml")
+            );
 
+            Parent root = loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Change Password");
+            dialogStage.getIcons().add(
+                    new Image(
+                            Objects.requireNonNull(
+                                    getClass().getResourceAsStream("/com/mindreader007/nsucash/image/NSUCash.png")
+                            )
+                    )
+            );
+
+            dialogStage.initModality(Modality.APPLICATION_MODAL);
+            dialogStage.setResizable(false);
+            dialogStage.setScene(new Scene(root));
+
+            ChangePasswordDialog controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+
+            dialogStage.showAndWait();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -87,7 +87,7 @@
       </Label>
       <ToolBar layoutX="69.0" layoutY="378.0" maxWidth="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="293.0" prefWidth="191.0" style="-fx-background-color: #d1dbe4; -fx-background-radius: 25;">
         <items>
-          <Button alignment="CENTER" mnemonicParsing="false" prefHeight="85.0" prefWidth="181.0" stylesheets="@../css/ButtonAlt.css" text="Edit Password">
+          <Button alignment="CENTER" mnemonicParsing="false" onAction="#onChangePasswordClicked" prefHeight="85.0" prefWidth="181.0" stylesheets="@../css/ButtonAlt.css" text="Change Password">
                <font>
                   <Font name="Arial Rounded MT Bold" size="12.0" />
                </font>
