@@ -1,0 +1,32 @@
+.combo-box {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-padding: 5 10 5 10;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.combo-box:hover {
+    -fx-border-color: #4CAF50;
+}
+
+.combo-box:focused {
+    -fx-border-color: #4CAF50;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0.5, 0, 0);
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #333333;
+}
+
+.combo-box .list-cell:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+.combo-box .list-cell:filled:selected {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+}
