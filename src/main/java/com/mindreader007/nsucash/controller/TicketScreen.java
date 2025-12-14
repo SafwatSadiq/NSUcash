@@ -107,7 +107,6 @@ public class TicketScreen implements Initializable {
         if (result.isPresent() && result.get() == ButtonType.OK) {
             String enteredPassword = showPasswordDialog();
             if (enteredPassword == null) {
-                System.out.println("User cancelled password dialog.");
                 return;
             }
 
