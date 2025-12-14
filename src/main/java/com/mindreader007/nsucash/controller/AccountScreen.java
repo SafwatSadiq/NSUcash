@@ -18,14 +18,21 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class AccountScreen implements Initializable {
-    @FXML private Label nameLabel;
-    @FXML private Label deptLabel;
-    @FXML private Label balanceLabel;
-    @FXML private Label usernameLabel;
-    @FXML private Label phoneLabel;
-    @FXML private Label ageLabel;
+    @FXML
+    private Label nameLabel;
+    @FXML
+    private Label deptLabel;
+    @FXML
+    private Label balanceLabel;
+    @FXML
+    private Label usernameLabel;
+    @FXML
+    private Label phoneLabel;
+    @FXML
+    private Label ageLabel;
 
-    @FXML private AnchorPane contentArea;
+    @FXML
+    private AnchorPane contentArea;
 
     private MainScreen mainScreen;
 
@@ -42,58 +49,29 @@ public class AccountScreen implements Initializable {
 
     @FXML
     private void onInstagramClicked() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Instagram");
-        alert.setHeaderText(null);
-        alert.setContentText("Instagram ID: @" + UserSession.getUser().getUsername());
-        setAlertIcon(alert);
-
-        alert.showAndWait();
+        showSocialAlert("Instagram", "Instagram ID: @" + UserSession.getUser().getUsername());
     }
 
     @FXML
     private void onFacebookClicked() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Facebook");
-        alert.setHeaderText(null);
-        alert.setContentText("Facebook ID: @" + UserSession.getUser().getUsername());
-        setAlertIcon(alert);
-
-        alert.showAndWait();
+        showSocialAlert("Facebook", "Facebook ID: @" + UserSession.getUser().getUsername());
     }
 
     @FXML
     private void onTelegramClicked() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Telegram");
-        alert.setHeaderText(null);
-        alert.setContentText("Telegram ID: @" + UserSession.getUser().getUsername());
-        setAlertIcon(alert);
-
-        alert.showAndWait();
+        showSocialAlert("Telegram", "Telegram ID: @" + UserSession.getUser().getUsername());
     }
 
     @FXML
     private void onEmailClicked() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Email");
-        alert.setHeaderText(null);
-        alert.setContentText("Email ID: " + UserSession.getUser().getUsername() + "@gmail.com");
-        setAlertIcon(alert);
-
-        alert.showAndWait();
+        showSocialAlert("Email", "Email ID: " + UserSession.getUser().getUsername() + "@gmail.com");
     }
 
     @FXML
     private void onLinkedinClicked() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Linkedin");
-        alert.setHeaderText(null);
-        alert.setContentText("Linkedin ID: @" + UserSession.getUser().getUsername());
-        setAlertIcon(alert);
-
-        alert.showAndWait();
+        showSocialAlert("Linkedin", "Linkedin ID: @" + UserSession.getUser().getUsername());
     }
+
 
     @FXML
     private void onTopUpClick(ActionEvent event) {
@@ -146,11 +124,12 @@ public class AccountScreen implements Initializable {
         alert.setHeaderText(null);
         alert.setContentText("Support Email: NSUcash@nsucash.com\nSupport Number: 01XXXXXXXXX\n");
         setAlertIcon(alert);
+        setAlertCSS(alert);
 
         alert.showAndWait();
     }
 
-    private void setAlertIcon(Alert alert){
+    private void setAlertIcon(Alert alert) {
         Stage alertStage = (Stage) alert.getDialogPane().getScene().getWindow();
         alertStage.getIcons().add(
                 new Image(
@@ -159,5 +138,23 @@ public class AccountScreen implements Initializable {
                         )
                 )
         );
+    }
+
+    private void setAlertCSS(Alert alert) {
+        alert.getDialogPane().getStylesheets().add(
+                getClass().getResource("/com/mindreader007/nsucash/css/Alert.css").toExternalForm()
+        );
+    }
+
+    private void showSocialAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+
+        setAlertIcon(alert);
+        setAlertCSS(alert);
+
+        alert.showAndWait();
     }
 }
