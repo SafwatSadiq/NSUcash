@@ -103,7 +103,14 @@ public class MainScreen implements Initializable {
 
     private void loadPage(String fxml){
         try {
-            AnchorPane pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxml)));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+            AnchorPane pane = loader.load();
+
+            Object controller = loader.getController();
+            if (controller instanceof AccountScreen) {
+                ((AccountScreen) controller).setMainScreen(this);
+            }
+
             contentArea.getChildren().setAll(pane);
 
         } catch (Exception e) {
