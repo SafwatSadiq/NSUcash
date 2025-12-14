@@ -99,7 +99,7 @@
                </font>
             </Button>
             <Pane layoutX="10.0" layoutY="90.0" prefHeight="5.0" prefWidth="181.0" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="181.0" stylesheets="@../css/ButtonAlt.css" text="Contact Support">
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onContactSupportClicked" prefHeight="85.0" prefWidth="181.0" stylesheets="@../css/ButtonAlt.css" text="Contact Support">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>

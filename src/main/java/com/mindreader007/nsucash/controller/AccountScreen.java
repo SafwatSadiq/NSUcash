@@ -1,23 +1,18 @@
 package com.mindreader007.nsucash.controller;
 
-import com.mindreader007.nsucash.model.User;
-import com.mindreader007.nsucash.services.UserDAO;
 import com.mindreader007.nsucash.services.UserSession;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -51,6 +46,7 @@ public class AccountScreen implements Initializable {
         alert.setTitle("Instagram");
         alert.setHeaderText(null);
         alert.setContentText("Instagram ID: @" + UserSession.getUser().getUsername());
+        setAlertIcon(alert);
 
         alert.showAndWait();
     }
@@ -61,6 +57,7 @@ public class AccountScreen implements Initializable {
         alert.setTitle("Facebook");
         alert.setHeaderText(null);
         alert.setContentText("Facebook ID: @" + UserSession.getUser().getUsername());
+        setAlertIcon(alert);
 
         alert.showAndWait();
     }
@@ -71,6 +68,7 @@ public class AccountScreen implements Initializable {
         alert.setTitle("Telegram");
         alert.setHeaderText(null);
         alert.setContentText("Telegram ID: @" + UserSession.getUser().getUsername());
+        setAlertIcon(alert);
 
         alert.showAndWait();
     }
@@ -81,6 +79,7 @@ public class AccountScreen implements Initializable {
         alert.setTitle("Email");
         alert.setHeaderText(null);
         alert.setContentText("Email ID: " + UserSession.getUser().getUsername() + "@gmail.com");
+        setAlertIcon(alert);
 
         alert.showAndWait();
     }
@@ -91,6 +90,7 @@ public class AccountScreen implements Initializable {
         alert.setTitle("Linkedin");
         alert.setHeaderText(null);
         alert.setContentText("Linkedin ID: @" + UserSession.getUser().getUsername());
+        setAlertIcon(alert);
 
         alert.showAndWait();
     }
@@ -137,5 +137,27 @@ public class AccountScreen implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void onContactSupportClicked() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Support");
+        alert.setHeaderText(null);
+        alert.setContentText("Support Email: NSUcash@nsucash.com\nSupport Number: 01XXXXXXXXX\n");
+        setAlertIcon(alert);
+
+        alert.showAndWait();
+    }
+
+    private void setAlertIcon(Alert alert){
+        Stage alertStage = (Stage) alert.getDialogPane().getScene().getWindow();
+        alertStage.getIcons().add(
+                new Image(
+                        Objects.requireNonNull(
+                                getClass().getResourceAsStream("/com/mindreader007/nsucash/image/NSUCash.png")
+                        )
+                )
+        );
     }
 }
