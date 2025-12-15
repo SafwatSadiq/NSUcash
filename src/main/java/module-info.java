@@ -1,6 +1,6 @@
 module com.mindreader007.nsucash {
-    requires javafx.controls;
-    requires javafx.fxml;
+    requires transitive javafx.controls;
+    requires transitive javafx.fxml;
     requires de.jensd.fx.glyphs.fontawesome;
     requires de.jensd.fx.glyphs.commons;
 

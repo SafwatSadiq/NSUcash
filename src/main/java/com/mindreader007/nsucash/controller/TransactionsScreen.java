@@ -10,7 +10,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class TransactionsScreen {
 

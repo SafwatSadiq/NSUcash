@@ -1,7 +1,6 @@
 package com.mindreader007.nsucash.controller;
 
 import com.mindreader007.nsucash.Main;
-import com.mindreader007.nsucash.services.TransactionsDAO;
 import com.mindreader007.nsucash.services.UserSession;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.FXML;
@@ -17,7 +16,6 @@ import javafx.scene.text.Font;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class MainScreen implements Initializable {

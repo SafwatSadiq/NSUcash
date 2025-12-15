@@ -1,7 +1,6 @@
 package com.mindreader007.nsucash.controller;
 
 import com.mindreader007.nsucash.model.Course;
-import com.mindreader007.nsucash.model.AdvisingStudent;
 import com.mindreader007.nsucash.services.CourseAdvisingService;
 import com.mindreader007.nsucash.services.UserSession;
 import javafx.beans.property.ReadOnlyObjectWrapper;

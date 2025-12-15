@@ -1,7 +1,6 @@
 package com.mindreader007.nsucash.services;
 
 import com.mindreader007.nsucash.database.Database;
-import com.mindreader007.nsucash.model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -11,7 +11,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
 
 public class CalculatorScreen {
@@ -19,7 +18,6 @@ public class CalculatorScreen {
     private String defaultStyle = "-fx-background-radius: 20; -fx-background-color: #d1dbe4; -fx-text-fill: #061742;";
 
     private double FirstNumber;
-    private double SecondNumber;
     private String Operator;
     private boolean startNew;
 
@@ -78,7 +76,6 @@ public class CalculatorScreen {
     public void onACClick(ActionEvent event){
         calculateBox.clear();
         FirstNumber = 0;
-        SecondNumber = 0;
         Operator = null;
     }
 
